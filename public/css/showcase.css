@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@200;400;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f7d4a9;
+}
+
+nav,
+h1 {
+    font-family: "Exo", sans-serif;
+    font-weight: 800;
+}
+
+label {
+    font-family: "Exo", sans-serif;
+    font-weight: 400;
+}
+
+main {
+    color: black;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+    background-size: cover;
+}
+
+main h1,
+main button {
+    text-transform: uppercase;
+}
+
+main h1 {
+    font-size: 25px;
+    position: center;
+}
+main p {
+    font-size: 12px;
+}
+
+.card-group {
+    height: 80%;
+    width: 80%;
+    margin-left: 200px;
+    margin-top: 30px;
+    justify-content: center;
+    border: none;
+}
+
+.page1 {
+    padding: 5px;
+    position: relative;
+}
