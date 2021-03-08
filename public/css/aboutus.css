@@ -6,13 +6,13 @@
 }
 
 body{
-    background-color: #f7d4a9;
+    background-color: #fff;
 }
 
 nav{
     font-family: 'Exo', sans-serif;
     font-weight: 800;
-    background-color: #f7d4a9;
+    background-color: #fff;
 }
 h1,h2,h3,h4,h5{
     font-family: 'Exo', sans-serif;
@@ -25,14 +25,14 @@ label{
 }
 
 main {
-    color: white;
+    color: black;
     justify-content: center;
     align-items: center;
     display: flex;
-    padding: 30px;
-    height: 40vh;
-    background: url("../foto/engineer-meeting-for-architectural-project-working-with-partner.jpg");
-    background-position: center;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
     background-size: cover;
 }
 
@@ -69,7 +69,7 @@ hr{
 
 .column {
   float: all;
-  width: 50%;
+  width: 33.33%;
   margin-bottom: 16px;
   padding: 50 50px;
 }
@@ -85,19 +85,19 @@ footer{
     bottom: 0;
     width: 100%;
     height: 170px;
-    background-color: #f7d4a9;
+    background-color: #fff;
 }
 
 @media (min-width: 768px) {
     main{
-        height: 70vh;
+        /*height: 70vh;*/
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
     }
     
     main h1{
-        font-size: 45px;
+        font-size: 25px;
     }
     main p{
         font-size: 16px;
