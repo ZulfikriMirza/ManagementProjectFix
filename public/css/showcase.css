@@ -46,12 +46,8 @@ main p {
     font-size: 12px;
 }
 
-.card-group {
-    height: 80%;
-    width: 80%;
-    margin-left: 200px;
-    margin-top: 30px;
-    justify-content: center;
+.card {
+    text-align: left;
     border: none;
 }
 

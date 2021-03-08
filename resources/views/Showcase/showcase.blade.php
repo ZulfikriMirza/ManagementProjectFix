@@ -17,7 +17,7 @@
 
 <div class="page1">
     <div class="container text-center">
-        <div class="w3-animate-opacity row service">
+        <div class="row service">
                     <div class="col-lg-6 col-md-7 mb-4 nopadding">
                             <div class="card">
                                 <img class="card-img-top" src="{{ asset('produkListJasa/COV.PA2A.png') }}" alt="Card image cap">
