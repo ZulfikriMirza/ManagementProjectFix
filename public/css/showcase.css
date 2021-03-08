@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@200;400;800&display=swap");
+@import "compass/css3";
 
 * {
     margin: 0;
@@ -6,7 +7,7 @@
 }
 
 body {
-    background-color: #f7d4a9;
+    background-color: #fff;
 }
 
 nav,
