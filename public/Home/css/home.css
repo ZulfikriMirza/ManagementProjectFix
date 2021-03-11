@@ -10,6 +10,26 @@ h1,h2,h3,h4{
 }
 
 /* ==========================
+    NAVBAR SECTION
+  ===========================*/
+.navbars{
+    position: relative;
+    background-color: transparent !important;
+    z-index: 9;
+}
+
+.navbars .navbars-rights i,
+.navbars .navbars-rights h4,
+.navbars .navbars-rights h4 a{
+    color: rgb(230, 230, 230) !important;
+}
+
+.navbars .navbars-rights > .cart-show{
+    top: 65% !important;
+    z-index: 9 !important;
+}
+
+/* ==========================
     MAIN IMAGE SECTION
   ===========================*/
 .img-section{
@@ -17,7 +37,7 @@ h1,h2,h3,h4{
     transform: translate(-50%,-50%);
     top: 52%;
     left: 45%;
-    z-index: 20;
+    z-index: 5;
     width: 750px;
     height: 500px;
     overflow: hidden;
@@ -37,85 +57,10 @@ h1,h2,h3,h4{
 }
 
 .mainSection{
+    margin-top: -105px;
     width: 100%;
     height: 100vh;
 }
-/* ==========================
-    MAIN LEFT SECTION
-  ===========================*/
-  
-.mainSection .leftSection h1{
-    font-size: 24px;
-    padding: 40px;
-    text-transform: uppercase;
-    font-weight: 800;
-}
-
-.mainSection .leftSection .navbars{
-    display: flex;
-    justify-content: space-between;
-}
-
-.mainSection .leftSection .navbars-right{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    margin-right: 40px;
-    font-family: "Exo",sans-serif;
-    font-weight: 400;
-}
-.mainSection .leftSection .navbars-right p{
-    padding: 0 5px;
-}
-.mainSection .leftSection .navbars-right a{
-    display: block;
-    overflow: hidden;
-    position: relative;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #282828;
-}
-.mainSection .leftSection .navbars-right p a span{
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(143deg, rgba(73,73,73,1) 0%, rgba(204,204,204,1) 100%);
-}
-.mainSection .leftSection .navbars-right p a span:last-child{
-    bottom: 0;
-    right: 0;
-    transform: translateX(110%);
-}
-.mainSection .leftSection .navbars-right p a span:first-child   {
-    top: 0;
-    left: 0;
-    transform: translateX(-110%);
-    background: linear-gradient(252deg, rgba(73,73,73,1) 0%, rgba(204,204,204,1) 100%);
-}
-.mainSection .leftSection .navbars-right a:hover > span:last-child{
-    animation: animate 0.7s linear infinite;
-}
-.mainSection .leftSection .navbars-right a:hover > span:first-child{
-    animation: animate2 0.7s linear infinite;
-}
-
-@keyframes animate{
-    0%{
-        transform: translateX(110%);
-    }
-    100%{
-        transform: translateX(-110%);
-    }
-}
-@keyframes animate2{
-    0%{
-        transform: translateX(-110%);
-    }
-    100%{
-        transform: translateX(110%);
-    }
-}
-
 /* ==========================
     ICON SECTION
     ===========================*/
@@ -123,8 +68,8 @@ h1,h2,h3,h4{
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 20%;
-    left: 12%;
+    top: 35%;
+    left: 10%;
 }
 .icon-section i{
     color: #515256;
@@ -160,7 +105,6 @@ h1,h2,h3,h4{
     transition: 0.3s ease-in-out;
 }
 
-.mainSection .rightSection h4,
 .mainSection .rightSection h3,
 .mainSection .rightSection h2{
     position: relative;
@@ -168,60 +112,11 @@ h1,h2,h3,h4{
     text-align: right;
     z-index: 9;
 }
-/* LOGIN | REGISTER PART */
-.mainSection .rightSection .home-cart h4{
-    letter-spacing: 1px;
-    font-size: 15px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
 
-/* CART SECTION */
-.mainSection .rightSection .home-cart{
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    padding: 40px 45px 10px 5px;
-}
-.mainSection .rightSection .home-cart i{
-    margin-right: 40px;
-    cursor: pointer;
-    color: white;
-    font-size: 20px;
-}
 
-.show-cart{    
-    transform: scaleY(1) !important;
-}
-
-.mainSection .rightSection .home-cart > .cart-show{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 100%;
-    right: 50%;
-    z-index: 99;
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px 0px 20px 20px ;
-    width: 300px;
-    height: 180px;
-    -webkit-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
-    -moz-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
-    box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
-    transform-origin: top;
-    transform: scaleY(0);
-    transition: 0.2s ease-in-out;
-}
-.mainSection .rightSection .home-cart > .cart-show img{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    
-}
-
+/* ==========================
+    TITLE TEXT SECTION
+    ===========================*/
 .mainSection .rightSection .title-number{
     width: 50px;
     position: relative;
@@ -233,7 +128,7 @@ h1,h2,h3,h4{
 .mainSection .rightSection h2{
     left: -0%;
     font-size: 35px;
-    padding: 80px 5px 10px 5px;
+    padding: 220px 5px 10px 5px;
     font-weight: 800;
     transition: 0.3s ease-in-out;
     

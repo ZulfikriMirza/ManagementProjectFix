@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ListJasaController;
 use App\Http\Controllers\Showcase;
 use App\Http\Controllers\UserPageController;
 use App\Http\Controllers\AboutUsController;
@@ -26,17 +25,12 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 //------------------Controller HOME------------------//
-Route::get('/', [HomeController::class, 'index']);
-
-
-
-//------------------Controller List Jasa------------------//
-Route::get('/listjasa', [ListJasaController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name("home");
 
 
 
 //------------------Controller Showcase------------------//
-Route::get('/showcase', [Showcase::class, 'index']);
+Route::get('/showcase', [Showcase::class, 'index'])->name("showcase");
 
 
 //------------------Controller User------------------//
@@ -45,10 +39,10 @@ Route::get('/user', [UserPageController::class, 'index']);
 
 
 //------------------Controller About Us------------------//
-Route::get('/aboutus', [AboutUsController::class, 'index']);
+Route::get('/aboutus', [AboutUsController::class, 'index'])->name("aboutus");
 
 
 
 
 //------------------Controller Contact------------------//
-Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index'])->name("contact");

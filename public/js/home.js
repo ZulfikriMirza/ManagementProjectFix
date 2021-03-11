@@ -26,13 +26,6 @@ $(document).ready(function () {
 
     }, 3000);
 
-
-    $(`.mainSection .rightSection .home-cart i`).click(() => {
-        $(`.mainSection .rightSection .home-cart > .cart-show`).toggleClass("show-cart");
-        console.log(showCart);
-    });
-
-
     $('.slider').slick({
         centerMode: true,
         autoplay: true,

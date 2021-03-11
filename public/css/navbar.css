@@ -1,29 +1,141 @@
-/* header {
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;400;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.navbars{
+    background-color: white;
+    padding: 20px;
+    font-family: "Exo", sans-serif;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.navbars h1{
+    padding-left: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.navbars h1 a{
+    color: #282828;
+    text-decoration: none;
+}
+
+.navbars-middle{
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    font-weight: 400;
+}
+.navbars-middle p{
+    padding: 0 5px;
+}
+.navbars-middle a{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #282828;
+}
+.navbars-middle p a span{
     position: absolute;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(143deg, rgba(73,73,73,1) 0%, rgba(204,204,204,1) 100%);
+}
+.navbars-middle p a span:last-child{
+    bottom: 0;
+    right: 0;
+    transform: translateX(110%);
+}
+.navbars-middle p a span:first-child   {
     top: 0;
     left: 0;
-    width: 100%;
-    padding: 40px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    transform: translateX(-110%);
+    background: linear-gradient(252deg, rgba(73,73,73,1) 0%, rgba(204,204,204,1) 100%);
 }
-header .logo {
-    font-size: 2em;
-    color: #fff;
-    font-weight: 700;
+.navbars-middle a:hover > span:last-child{
+    animation: animate 0.7s linear infinite;
+}
+.navbars-middle a:hover > span:first-child{
+    animation: animate2 0.7s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: translateX(110%);
+    }
+    100%{
+        transform: translateX(-110%);
+    }
+}
+@keyframes animate2{
+    0%{
+        transform: translateX(-110%);
+    }
+    100%{
+        transform: translateX(110%);
+    }
+}
+
+.navbars .navbars-rights{
+    display: flex;
+    justify-content: baseline;
+}
+
+.navbars .navbars-rights h4{
+    padding-right: 20px;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: 400;
     text-transform: uppercase;
+}
+
+.navbars .navbars-rights h4 a{
+    color: #282828;
     text-decoration: none;
 }
-header .navigation {
-    position: relative;
+
+/* CART SECTION */
+.navbars .navbars-rights i{
+    margin-right: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #6b6b6b;
+}
+
+.show-cart{    
+    transform: scaleY(1) !important;
+}
+
+.navbars .navbars-rights > .cart-show{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    right: 17%;
+    z-index: 99;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 0px 20px 20px ;
+    width: 300px;
+    height: 180px;
+    -webkit-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: 0.2s ease-in-out;
 }
-header .navigation li {
-    list-style: none;
+.navbars .navbars-rights > .cart-show img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
-header .navigation li a {
-    color: #fff;
-    margin-left: 40px;
-    text-decoration: none;
-} */
