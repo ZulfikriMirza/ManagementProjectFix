@@ -4,7 +4,7 @@
         <p><a href="{{ route('aboutus') }}"><span></span>About Us<span></span></a></p>
         <p><a href="{{ route('showcase') }}"><span></span>Showcase<span></span></a></p>
         <p><a href="{{ route('contact') }}"><span></span>Contact<span></span></a></p>
-        <p><a href="#"><span></span>Cart<span></span></a></p>
+        <p><a href="{{ route('checkout') }}"><span></span>Checkout<span></span></a></p>
     </div>
     <div class="navbars-rights">
         <i class="fas fa-shopping-cart"></i>

@@ -34,10 +34,6 @@ Route::get('/showcase', [Showcase::class, 'index'])->name("showcase");
 
 
 
-//------------------Controller Home------------------//
-Route::get('/', [HomeController::class, 'index']);
-
-
 //------------------Controller User------------------//
 Route::get('/user', [UserPageController::class, 'index']);
 
@@ -52,5 +48,5 @@ Route::get('/aboutus', [AboutUsController::class, 'index'])->name("aboutus");
 Route::get('/contact', [ContactController::class, 'index'])->name("contact");
 
 
-//------------------Controller Contact------------------//
-Route::get('/checkout', [CartController::class, 'index']);
+//------------------Controller Checkout------------------//
+Route::get('/checkout', [CartController::class, 'index'])->name("checkout");
