@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;400;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h1,h2,h3,h4{
+    font-family: "Exo",sans-serif;
+}
+
+/* ==========================
+    MAIN IMAGE SECTION
+  ===========================*/
+.img-section{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 52%;
+    left: 45%;
+    z-index: 20;
+    width: 750px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.img-section img{
+    position: relative;
+    top: 0%;
+    width: 750px;
+    height: 500px;
+    transition: 0.3s ease-in-out;
+}
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.mainSection{
+    width: 100%;
+    height: 100vh;
+}
+/* ==========================
+    MAIN LEFT SECTION
+  ===========================*/
+  
+.mainSection .leftSection h1{
+    font-size: 24px;
+    padding: 40px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.mainSection .leftSection .navbars{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainSection .leftSection .navbars-right{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 40px;
+    font-family: "Exo",sans-serif;
+    font-weight: 400;
+}
+.mainSection .leftSection .navbars-right p{
+    padding: 0 5px;
+}
+.mainSection .leftSection .navbars-right a{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #282828;
+}
+.mainSection .leftSection .navbars-right p a span{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(143deg, rgba(73,73,73,1) 0%, rgba(204,204,204,1) 100%);
+}
+.mainSection .leftSection .navbars-right p a span:last-child{
+    bottom: 0;
+    right: 0;
+    transform: translateX(110%);
+}
+.mainSection .leftSection .navbars-right p a span:first-child   {
+    top: 0;
+    left: 0;
+    transform: translateX(-110%);
+    background: linear-gradient(252deg, rgba(73,73,73,1) 0%, rgba(204,204,204,1) 100%);
+}
+.mainSection .leftSection .navbars-right a:hover > span:last-child{
+    animation: animate 0.7s linear infinite;
+}
+.mainSection .leftSection .navbars-right a:hover > span:first-child{
+    animation: animate2 0.7s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        transform: translateX(110%);
+    }
+    100%{
+        transform: translateX(-110%);
+    }
+}
+@keyframes animate2{
+    0%{
+        transform: translateX(-110%);
+    }
+    100%{
+        transform: translateX(110%);
+    }
+}
+
+/* ==========================
+    ICON SECTION
+    ===========================*/
+.icon-section{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 20%;
+    left: 12%;
+}
+.icon-section i{
+    color: #515256;
+    padding: 14px 0;
+    font-size: 30px;
+}
+
+/* ==========================
+    MAIN RIGHT SECTION
+    ===========================*/
+.mainSection .rightSection{
+    background-color: #1f1f1f;
+    position: relative;
+    width: 100%;
+}
+
+.mainSection .rightSection .text-background{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    top: 20%;
+    z-index: 2;
+}
+.mainSection .rightSection h1{
+    position: relative;
+    left: 0%;
+    font-size: 400px;
+    font-weight: 800;
+    color: #282828;
+    padding: 0 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.mainSection .rightSection h4,
+.mainSection .rightSection h3,
+.mainSection .rightSection h2{
+    position: relative;
+    color: white;
+    text-align: right;
+    z-index: 9;
+}
+/* LOGIN | REGISTER PART */
+.mainSection .rightSection .home-cart h4{
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* CART SECTION */
+.mainSection .rightSection .home-cart{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding: 40px 45px 10px 5px;
+}
+.mainSection .rightSection .home-cart i{
+    margin-right: 40px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+
+.show-cart{    
+    transform: scaleY(1) !important;
+}
+
+.mainSection .rightSection .home-cart > .cart-show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    z-index: 99;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px 0px 20px 20px ;
+    width: 300px;
+    height: 180px;
+    -webkit-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: 0.2s ease-in-out;
+}
+.mainSection .rightSection .home-cart > .cart-show img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    
+}
+
+.mainSection .rightSection .title-number{
+    width: 50px;
+    position: relative;
+    left: 80%;
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+}
+.mainSection .rightSection h2{
+    left: -0%;
+    font-size: 35px;
+    padding: 80px 5px 10px 5px;
+    font-weight: 800;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.mainSection .rightSection .text-title{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+.mainSection .rightSection h3{
+    top: 0%;
+    font-size: 24px;
+    padding: 10px 40px 40px 40px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 400;
+    line-height: 1.6;
+    transition: 0.3s ease-in-out;
+}
+
+.mainSection .rightSection .controller i{
+    cursor: pointer;
+    padding: 4px 0;
+    font-size: 30px;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+.mainSection .rightSection .controller i:hover{
+    transform: scale(1.2);
+}
+.mainSection .rightSection .controller{
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+}

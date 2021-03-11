@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;400;600;800;1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1,h4,h5,p{
+    font-family: "Exo",sans-serif;
+}
+
+.choose-us{
+    margin-top: 150px;
+}
+
+.choose-us img{
+    position: relative;
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.choose-us .text-choose-us{
+    padding: 40px 30px;
+    position: absolute;
+    top: 100px;
+    left: 55%;
+    width: 350px;
+    height: 350px;
+    -webkit-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    z-index: 20;
+    background-color: white;
+}
+
+.choose-us .text-choose-us h5{
+    font-size: 17px;
+    font-weight: 600;
+}
+.choose-us .text-choose-us p{
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.choose-us h1{
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 1000;
+    color: #ededed;
+    transform: rotate(270deg);
+    left: -10%;
+    top: 40%;
+    letter-spacing: 10px;
+    font-size: 60px;
+}
+
+.choose-us h4{
+    font-size: 30px;
+    position: relative;
+    top: 35%;
+    left: 35%;
+    font-weight: 600;
+    text-transform: uppercase;
+}

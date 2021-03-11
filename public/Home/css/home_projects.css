@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@200;400;600;800;1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h4,p{
+    font-family: "Exo",sans-serif;
+}
+
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.project-title{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-title::before{
+    content: "";
+    position: absolute;
+    left: 33%;
+    width: 6px;
+    height: 100px;
+    background-color: black;
+}
+
+.project-title h4,.project-title p{
+    width: 30%;
+}
+
+.project-title h4{
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+.project-title p{
+    font-size: 13px;
+}
+
+.project-items .project_long img,
+.project-items .project_row_1 img{
+    object-fit: cover;
+}
+
+.project-items .project_long img{
+    width: 100%;
+    height: 620px;
+    margin: 20px;
+}
+.project-items .project_row_1 img{
+    width: 100%;
+    height: 300px;
+    margin: 20px 20px 20px 20px;
+}
+.project-items .project_row_2 img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin: 20px;
+}
+
+.project-items .named-project{
+    padding: 20px;
+    position: absolute;
+    width: 70%;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    -webkit-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+}
+
+.project-items .named-project h5{
+    font-weight: 600;
+    font-size: 20px;
+}   
+.project-items .named-project p{
+    font-size: 12px;
+}   
+
