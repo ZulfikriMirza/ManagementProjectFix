@@ -10,7 +10,7 @@ h1,h4,h5,p{
 }
 
 .choose-us{
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .choose-us img{
@@ -22,10 +22,11 @@ h1,h4,h5,p{
 }
 
 .choose-us .text-choose-us{
+    text-align: right;
     padding: 40px 30px;
     position: absolute;
-    top: 100px;
-    left: 55%;
+    top: 120px;
+    left: -30%;
     width: 350px;
     height: 350px;
     -webkit-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
@@ -50,7 +51,7 @@ h1,h4,h5,p{
     font-weight: 1000;
     color: #ededed;
     transform: rotate(270deg);
-    left: -10%;
+    left: 15%;
     top: 40%;
     letter-spacing: 10px;
     font-size: 60px;
@@ -60,7 +61,114 @@ h1,h4,h5,p{
     font-size: 30px;
     position: relative;
     top: 35%;
-    left: 35%;
+    left: 13%;
     font-weight: 600;
     text-transform: uppercase;
 }
+
+
+@media (max-width: 575.98px) {
+    .choose-us{
+        text-align: center;
+    }
+
+    .choose-us img{
+        width: 400px;
+        height: 500px;
+        margin-top: 30px;
+    }
+
+    .choose-us .text-choose-us{
+        text-align: left;
+        top: 50%;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .choose-us .text-choose-us h5{
+        font-size: 17px;
+    }
+    .choose-us .text-choose-us p{
+        font-size: 11px;
+    }
+
+    .choose-us h1{
+        text-align: left;
+        transform: rotate(0deg);
+        left: 0%;
+        top: 0%;
+    }
+
+    .choose-us h4{
+        top: -10%;
+        left: 0%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .choose-us{
+        text-align: center;
+    }
+
+    .choose-us img{
+        width: 400px;
+        height: 500px;
+        margin-top: 30px;
+    }
+
+    .choose-us .text-choose-us{
+        text-align: left;
+        top: 50%;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    .choose-us .text-choose-us h5{
+        font-size: 17px;
+    }
+    .choose-us .text-choose-us p{
+        font-size: 11px;
+    }
+
+    .choose-us h1{
+        text-align: left;
+        transform: rotate(0deg);
+        left: 0%;
+        top: 0%;
+    }
+
+    .choose-us h4{
+        top: -10%;
+        left: 0%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .choose-us h1{
+        left: 15%;
+        top: 40%;
+        letter-spacing: 4px;
+        font-size: 50px;
+    }
+
+    .choose-us h4{
+        font-size: 25px;
+        top: 35%;
+        left: 0%;
+    }
+}
+
+/* @media (max-width: 1199.98px) {
+    .choose-us h1{
+        left: 15%;
+        top: 40%;
+        letter-spacing: 4px;
+        font-size: 60px;
+    }
+
+    .choose-us h4{
+        font-size: 25px;
+        top: 35%;
+        left: 10%;
+    }
+} */

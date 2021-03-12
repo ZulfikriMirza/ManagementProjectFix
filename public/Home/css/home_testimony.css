@@ -70,3 +70,64 @@ h1,h4,p{
     font-weight: 400;
     padding: 20px;
 }
+
+@media (max-width: 575.98px) {
+    .testimony > img{
+        width: 300px !important;
+        height: 150px !important;
+    }
+
+    .testimony .comment img{
+        margin: 20px 20px 0px 10px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .testimony .comment .dialog{
+        padding: 20px;
+        width: 250px !important;
+        height: 100px !important;
+        top: -0px !important;
+    }
+
+    .testimony .comment .dialog i{
+        font-size: 15px !important;
+    }
+
+    .testimony .comment .dialog p{
+        font-size: 9px !important;
+        padding: 5px 5px 5px 5px !important;
+    }
+}
+@media (max-width: 767.98px) {
+    .testim h1{
+        margin-top: 120px;
+        font-size: 30px;
+    }
+    .testimony > img{
+        width: 400px;
+        height: 200px;
+    }
+
+    .testimony .comment img{
+        margin-right: 20px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .testimony .comment .dialog{
+        padding: 20px;
+        width: 300px;
+        height: 140px;
+        top: -20px;
+    }
+
+    .testimony .comment .dialog i{
+        font-size: 20px;
+    }
+
+    .testimony .comment .dialog p{
+        font-size: 11px;
+        padding: 10px 10px 20px 20px;
+    }
+}
