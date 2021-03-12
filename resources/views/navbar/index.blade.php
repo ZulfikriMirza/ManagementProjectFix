@@ -12,7 +12,7 @@
             <p class="mt-2">Yet! Cart is empty!</p>
             <img src="{{ asset('Home/Materials/3298067.jpg')}}">
         </div>
-        <h4><a href="#">LOGIN</a> | <a href="#">REGISTER</a></h4>
+        <h4><a href="{{ route('login') }}">LOGIN</a> | <a href="{{ route('register') }}">REGISTER</a></h4>
     </div>
     <div class="hamburger-menu">
         <div></div>
