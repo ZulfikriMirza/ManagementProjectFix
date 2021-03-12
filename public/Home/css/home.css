@@ -42,7 +42,6 @@ h1,h2,h3,h4{
     transform: translate(-50%,-50%);
     top: 32%;
     left: 50%;
-    z-index: 5;
     width: 400px;
     height: 200px;
     overflow: hidden;
@@ -85,6 +84,8 @@ h1,h2,h3,h4{
     background-color: #1f1f1f;
     position: relative;
     width: 100%;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .mainSection .rightSection .text-background{
@@ -186,6 +187,7 @@ h1,h2,h3,h4{
         top: 0%;
         width: 600px;
         height: 300px;
+        z-index: 5;
     }
     /* ==========================
         ICON SECTION
@@ -289,6 +291,8 @@ h1,h2,h3,h4{
         display: flex;
         position: absolute;
         overflow: hidden;
+        transform: translateX(-50%);
+        left: 50%;
         top: 20%;
         z-index: 2;
     }
@@ -368,12 +372,14 @@ h1,h2,h3,h4{
 }
 
 @media (min-width: 991.98px) {
+    /* ==========================
+        MAIN IMAGE SECTION
+    ===========================*/
     .img-section{
         position: absolute;
         transform: translate(-50%,-50%);
         top: 52%;
         left: 45%;
-        z-index: 5;
         width: 750px;
         height: 500px;
         overflow: hidden;
@@ -384,27 +390,68 @@ h1,h2,h3,h4{
         top: 0%;
         width: 750px;
         height: 500px;
+        z-index: 5;
         transition: 0.3s ease-in-out;
     }
+
+    .mainSection{
+        width: 100%;
+        height: 100vh;
+    }
+    /* ==========================
+        MAIN LEFT SECTION
+    ===========================*/
+    
+    .mainSection .leftSection h1{
+        font-size: 24px;
+        padding: 40px;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    /* ==========================
+        ICON SECTION
+        ===========================*/
+    .icon-section{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 35%;
+        left: 12%;
+    }
+    /* ==========================
+        MAIN RIGHT SECTION
+        ===========================*/
+
+    .mainSection .rightSection .text-background{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: absolute;
+        overflow: hidden;
+        top: 20%;
+        z-index: 2;
+    }
+    .mainSection .rightSection h1{
+        position: relative;
+        left: 0%;
+        font-size: 400px;
+        font-weight: 800;
+        color: #282828;
+        padding: 0 20px;
+    }
+    /*  TITLE SECTION */
+    .mainSection .rightSection h2{
+        left: -0%;
+        font-size: 35px;
+        padding: 200px 5px 10px 5px;
+        font-weight: 800;
+        transition: 0.3s ease-in-out;
+        
+    }
+
 }
 
 @media (min-width: 1199.98px) {
-    .img-section{
-        position: absolute;
-        transform: translate(-50%,-50%);
-        top: 52%;
-        left: 45%;
-        z-index: 5;
-        width: 750px;
-        height: 500px;
-        overflow: hidden;
-    }
-
-    .img-section img{
-        position: relative;
-        top: 0%;
-        width: 750px;
-        height: 500px;
-        transition: 0.3s ease-in-out;
-    }
+    
 }
