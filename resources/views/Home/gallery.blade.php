@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="gallery-wrapper">
             <h2>Gallery Show</h2>
-            <p>Find What Best at <a href="#">Showcase!</a></p>
+            <p>Find What Best at <a href="{{ route('showcase') }}">Showcase!</a></p>
         </div>
         <img src="{{ asset('Home/Materials/gallery1.png') }}">
         <img src="{{ asset('Home/Materials/gallery2.png') }}">
