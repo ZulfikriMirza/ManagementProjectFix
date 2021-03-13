@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_projects.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_chooseUs.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_gallery.css') }}" />
     <link rel="stylesheet" href="{{ asset('Home/css/home_listjasa.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_testimony.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_footer.css') }}" />
@@ -32,12 +33,17 @@
         ===============================-->
     <link href="{{ asset('Home/fontawesome_css/all.css') }}" rel="stylesheet" type="text/css" />
 
+    <!--===============================
+        AOS JS CDN
+        ===============================-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Arsitek - HOME</title>
 </head>
 
 <body>
     @include('Home.landingPage')
     @include('Home.project')
+    @include('Home.gallery')
     @include('Home.chooseUs')
     @include('Home.listjasa')
     @include('Home.testimony')
@@ -51,6 +57,10 @@
         SLICK JS FILE -> For Image Carousel
         ===============================-->
     <script src="{{ asset('Home/slick/slick.min.js') }}"></script>
+    <!--===============================
+        AOS JS -> Animate On Scroll
+        ===============================-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!--===============================
         ADDITIONAL NECESSARY JS FILE -> For Image Carousel
         ===============================-->

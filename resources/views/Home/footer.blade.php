@@ -1,7 +1,7 @@
  <footer>
      <div class="container-fluid">
          <div class="container">
-             <div class="row justify-content-center mt-5">
+             <div class="row justify-content-center">
                  <div class="col-md-5 align-self-center">
                      <h1>ARSITEKKU</h1>
                      <p>Lorem ipsum, atau ringkasnya lipsum, adalah teks standar yang ditempatkan untuk mendemostrasikan elemen grafis atau presentasi visual seperti font</p>
@@ -9,10 +9,10 @@
                  <div class="col-md-3 offset-md-1">
                      <h2>Usefull Links</h2>
                      <div class="footer-navbar">
-                         <a href="#">About Us</a>
-                         <a href="#">Showcase</a>
-                         <a href="#">Contact</a>
-                         <a href="#">Checkout</a>
+                         <a href="{{ route('aboutus') }}">About Us</a>
+                         <a href="{{ route('showcase') }}">Showcase</a>
+                         <a href="{{ route('contact') }}">Contact</a>
+                         <a href="{{ route('checkout') }}">Checkout</a>
                      </div>
                  </div>
                  <div class="col-md-3">
@@ -26,7 +26,7 @@
                  </div>
              </div>
              <hr>
-             <p class="text-center">&copy; Designed and Developed by INFORMATIKA ITENAS</p>
+             <p class="text-center" style="padding-bottom: 40px;">&copy; Designed and Developed by INFORMATIKA ITENAS</p>
          </div>
      </div>
  </footer>

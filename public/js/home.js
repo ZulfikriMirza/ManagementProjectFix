@@ -1,3 +1,5 @@
+AOS.init();
+
 let tops = 0;
 let temp = 0;
 let lefts = 0;

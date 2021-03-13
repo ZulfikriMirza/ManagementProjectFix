@@ -1,4 +1,4 @@
-<div class="choose-us container mb-5">
+<div class="choose-us container mb-5" data-aos="zoom-in-down" data-aos-duration="1000">
     <div class="row justify-content-center">
         <div class="col-md-6 col-lg-5">
             <h1>Choose Us</h1>

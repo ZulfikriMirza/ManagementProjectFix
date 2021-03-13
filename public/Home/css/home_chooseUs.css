@@ -10,7 +10,7 @@ h1,h4,h5,p{
 }
 
 .choose-us{
-    margin-top: 100px;
+    margin-top: 170px;
 }
 
 .choose-us img{
@@ -106,6 +106,9 @@ h1,h4,h5,p{
 }
 
 @media (max-width: 767.98px) {
+    .choose-us{
+        margin-top: 100px;
+    }
     .choose-us{
         text-align: center;
     }
