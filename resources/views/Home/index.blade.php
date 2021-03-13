@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_chooseUs.css') }}" />
     <link rel="stylesheet" href="{{ asset('Home/css/home_listjasa.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_testimony.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_footer.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navbar.css') }}" />
 
     <!--===============================
@@ -40,6 +41,7 @@
     @include('Home.chooseUs')
     @include('Home.listjasa')
     @include('Home.testimony')
+    @include('Home.footer')
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
