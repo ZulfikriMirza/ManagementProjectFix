@@ -37,19 +37,25 @@ h1,h3{
     margin: 0;
     margin-left: -10%;
     position: relative; 
-    top: -50%;
-    background-color: #e6e6e6;
+    top: -30%;
+    background-color: #273446;
+    color: #E6E6E6;
     width: 120%;
     height: 70px;
+    -webkit-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+
 }
 .listjasa .items .text-listjasa h3{
     margin-top: 10px;
     text-align: center;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
     text-transform: uppercase;
 }
 .listjasa .items button{
+    background-color: #273446;
     margin-top: -50px;
     float: right;
     font-size: 18px;
@@ -78,7 +84,6 @@ h1,h3{
         margin-left: -10%;
         position: relative; 
         top: -150px;
-        background-color: #e6e6e6;
         width: 120%;
         height: 70px;
     }

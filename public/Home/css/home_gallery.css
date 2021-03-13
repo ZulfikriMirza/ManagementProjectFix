@@ -1,0 +1,82 @@
+.gallery .container-fluid{
+    margin-top: 170px;
+    height: 80vh;
+    background-color: #1f262e;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery .container-fluid:hover > .gallery-wrapper{
+    opacity: 1;
+}
+
+.gallery-wrapper{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 20, 24, 0.7);
+    z-index: 20;
+    color: #E6E6E6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s linear;
+    
+}
+.gallery-wrapper h2{
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 40px;
+}
+.gallery-wrapper p{
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 20px;
+}
+.gallery-wrapper a{
+    font-weight: 600;
+    color: #E6E6E6;
+    margin-left: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgb(255, 110, 110);
+}
+.gallery .container-fluid img{
+    position: relative;
+    left: -5%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: animate_gallery 40s infinite;
+    animation-delay: 2s;
+}
+
+@keyframes animate_gallery{
+    0%{
+        left: -5%;
+    }
+    50%{
+        left: -105%;
+    }
+    55%{
+        left: -105%;
+    }
+    100%{
+        left: -5%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .gallery .container-fluid{
+        margin-top: 120px;
+        height: 50vh;
+    }
+}

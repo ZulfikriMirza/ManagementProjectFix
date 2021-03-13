@@ -1,6 +1,6 @@
 footer .container-fluid{
     margin-top: 100px;
-    height: 60vh;
+    height: 100%;
     width: 100%;
     background-color: #273446;
 }
@@ -54,6 +54,7 @@ footer .footer-icon-section{
 footer .footer-icon-section i{
     padding: 20px 20px 0 0;
     padding-right: 20px;
+    cursor: pointer;
 }
 
 hr{
@@ -61,4 +62,10 @@ hr{
     width: 95%;
     height: 1px;
     background-color: #CEA886;
+}
+
+@media (max-width: 767.98px) {
+    footer .container .col-md-3{
+        margin-top: 40px;
+    }
 }
