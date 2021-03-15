@@ -6,13 +6,13 @@
 }
 
 body{
-    background-color: #f7d4a9;
+    background-color: #fff;
 }
 
 nav{
     font-family: 'Exo', sans-serif;
     font-weight: 800;
-    background-color: #f7d4a9;
+    background-color: #fff;
 }
 
 h1{
@@ -70,7 +70,7 @@ main p{
     height: 100%; 
     border: 1px 
     solid #666; 
-    background-color:#f7f4ed;
+    background-color:#fff;
 }
 .form-card-body {
     border-top: 0px;
@@ -80,7 +80,7 @@ main p{
     height: 100%; 
     border: 1px 
     solid #666; 
-    background-color:#f7f4ed;
+    background-color:#fff;
 }
 
 
@@ -128,7 +128,7 @@ footer{
     bottom: 0;
     width: 100%;
     height: 170px;
-    background-color: #f7d4a9;
+    background-color: #fff;
 }
 
 .contact100-form {
