@@ -13,8 +13,8 @@ class CreateJasaTable extends Migration
      */
     public function up()
     {
-        Schema::create('jasa', function (Blueprint $table) {
-            $table->increments('jasa_id');
+        Schema::create('jasas', function (Blueprint $table) {
+            $table->increments('jasa_id'); //terhitung kode pemesanan juga
             $table->string('nama_jasa');
             $table->string('estimasi_harga');
             $table->timestamps();
@@ -28,6 +28,6 @@ class CreateJasaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jasa');
+        Schema::dropIfExists('jasas');
     }
 }

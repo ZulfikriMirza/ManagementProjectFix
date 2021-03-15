@@ -25,7 +25,7 @@ class CreateOrderTable extends Migration
             $table->string('kecamatan');
             $table->string('Kode_pos');
             $table->string('konsep');
-            $table->string('range_harga');
+            $table->integer('range_harga');
             $table->string('pengunaan_foto');
             $table->foreignId('jasa_id');
             $table->foreignId('users_id');

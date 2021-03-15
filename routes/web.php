@@ -50,3 +50,34 @@ Route::get('/contact', [ContactController::class, 'index'])->name("contact");
 
 //------------------Controller Checkout------------------//
 Route::get('/checkout', [CartController::class, 'index'])->name("checkout");
+Route::post('/Keranjang','CartController@getCart')->name('cart.keranjang');
+Route::post('/Tambahkeranjang','CartController@getTambahKeranjang')->name('cart.TambahKeranjang');
+Route::post('/Tambah/{id}','CartController@getTambah')->name('cart.plus');
+Route::post('/reduce/{id]','CartController@getReduceOne')->name('cart.reduceOne');
+Route::post('/remove/{id]','CartController@getRemoveItem')->name('cart.remove');
+
+// Route::get('/Keranjang',[
+//     'uses' => 'CartController@getCart',
+//     'as'=> 'cart.keranjang'
+//   ]);
+  
+  
+//   Route::get('/Tambahkeranjang/{id}',[
+//     'uses' => 'CartController@getTambahKeranjang',
+//     'as'=> 'cart.TambahKeranjang'
+//   ]);
+  
+//   Route::get('/Tambah/{id}',[
+//     'uses' => 'CartController@getTambah',
+//     'as'=> 'cart.plus'
+//   ]);
+  
+//   route::get('/reduce/{id}',[
+//     'uses'=>'CartController@getReduceOne',
+//     'as'=>'cart.reduceOne'
+//   ]);
+  
+//   route::get('/remove/{id}',[
+//     'uses'=>'CartController@getRemoveItem',
+//     'as'=>'cart.remove'
+//   ]);
