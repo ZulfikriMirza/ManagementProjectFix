@@ -14,9 +14,10 @@ nav{
     font-weight: 800;
     background-color: #fff;
 }
-h1,h2,h3,h4,h5{
-    font-family: 'Exo', sans-serif;
+h1,h2{
+    font-family: "Exo",sans-serif;
     font-weight: 800;
+
 }
 
 label{
@@ -47,30 +48,111 @@ main p{
     font-size: 12px;
 }
 
-
 .jumbotron {
-    background: url('../foto/engineer-meeting-for-architectural-project-working-with-partner.jpg');
+    background: url('../foto/MAS_PA2B_2.png');
     background-size: cover;
+    background-repeat: no-repeat;
     padding: 30px;
-    height: 70vh;
+    height: 60vh;
 }
 
-.jumbotron img{
-    width: 200px;
-    border: 3px solid #666;
-}
-hr{
+ hr{
     border-top: 1px solid #666; 
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+}
+.box{
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.box .imgBx{
+    position: relative;
+    left: 0;
+    width: 60%;
+    padding: 10px;
+    box-sizing: border-box; 
+    overflow: hidden;
+}
+
+.box:hover{
+    height: 450px;
+}
+
+.box .imgBx img{
+    max-width: 80%;
+    transition: 0.5s;    
+}
+
+.box:hover .imgBx img{
+    max-width: 80%;
+    opacity: 1;
+    transition: 0.5s;    
+}
+
+.box:before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #a4abe0;
+    z-index: -1;
+}
+
+.box:after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: #a4abe0;
+    z-index: -2;
+  
+}
+
+.box .content{
+    width: 30%;
+    bottom: 0;
+    background: rgba(0,0,0,0,4);
+    display: flex;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.box:hover .content{
+    opacity: 1;
+}
+
+.box .content h2{
+    letter-spacing: 1px;
+
+}
+.box .content span{
+    font-size: 20px;
+    letter-spacing: 1px;
 }
 
 .column {
   float: all;
-  width: 33.33%;
+  width: 50%;
   margin-bottom: 16px;
+  padding: 50 50px;
+}
+.column2{
+  width: 100%;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 50 50px;
 }
 
@@ -78,14 +160,6 @@ hr{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   position: center;
   margin: 45px;
-}
-
-footer{
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 170px;
-    background-color: #fff;
 }
 
 @media (min-width: 768px) {

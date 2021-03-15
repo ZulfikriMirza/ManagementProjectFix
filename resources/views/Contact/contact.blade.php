@@ -2,12 +2,14 @@
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/contact.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_footer.css') }}"/>
 @endsection
 
 @section('title','Contact')
 
 @section('content')
 @include('navbar.index')
+
 <div class="container mt-5">
   <h1 style="text-align: center">Contact</h1>
 
@@ -31,23 +33,6 @@
   </section>
 </div>
 </div>
+@include('Home.footer')
 
-<footer class="container text-center">
-  <hr>
-  </hr>
-  <div class="site-footer-below-section-1 site-footer-section site-footer-section-1">
-    <div class="ast-builder-layout-element ast-flex site-footer-focus-item ast-footer-copyright" data-section="section-footer-builder">
-      <div class="ast-footer-copyright">
-        <div class="ast-footer-html-inner">
-          <p>Copyright © 2021 - <a href="https://www.2k.com/en-US/" target="_blank">2K Sports</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-widget-area widget-area site-footer-focus-item ast-footer-html-1" data-section="section-fb-html-1">
-      <div class="ast-header-html inner-link-style-">
-        <div class="ast-builder-html-element">
-          <p>Powered by GFuel</p>
-        </div>
-      </div>
-</footer>
 @endsection
