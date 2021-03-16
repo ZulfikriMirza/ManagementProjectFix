@@ -9,6 +9,7 @@
 @section('content')
 @include('navbar.index')
 
+@if(Session::has('cart'))
 <div class="container">
 <div class="row d-flex justify-content-center">
     <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3 ">
