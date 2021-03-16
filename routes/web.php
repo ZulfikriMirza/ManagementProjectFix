@@ -8,6 +8,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\livewire\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,4 +50,6 @@ Route::get('/contact', [ContactController::class, 'index'])->name("contact");
 
 
 //------------------Controller Checkout------------------//
-Route::get('/checkout', [CartController::class, 'index'])->name("checkout");
+Route::get('/cart', [CartController::class, 'index'])->name("cart");
+
+Route::get('/checkout', [CheckoutController::class, 'render'])->name("checkout");
