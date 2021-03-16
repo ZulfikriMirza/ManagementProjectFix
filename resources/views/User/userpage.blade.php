@@ -7,7 +7,7 @@
 @section('title','Home')
 
 @section('content')
-@include('navbar.navbar')
+@include('navbar.index')
 
 <section class= "contact" id = "contact">
     <div class="container">
