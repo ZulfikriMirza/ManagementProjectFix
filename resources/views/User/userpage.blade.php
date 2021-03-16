@@ -2,32 +2,32 @@
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('css/userpage.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_footer.css') }}"/>
 @endsection
 
-@section('title','Home')
+@section('title','User')
 
 @section('content')
 @include('navbar.index')
 
-<section class= "contact" id = "contact">
-    <div class="container">
-        <div class="row">
-        <div class="col-sm-12">
-        <h2 class="text-center"> Page User </h2>
-        <hr>
-        <br></br>
-        </div>
-        </div>
+<main>
+        <h1 class="text-center"> Page User </h1>
+</main>
+
+
+
+    
+    <div class="bungkus">    
 
         <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4 col-sm-offset-1">
         <img src="{{ asset('produkListJasa/bapak.png') }}" class="img-thumbnail">
         <br></br>
         </div>
 
-        <div class="col-sm-8">
+        <div class="col-sm-6">
         <h3>Informasi User</h3>
-        <hr>
+       
     
             <form>
                 <div class="form-group">
@@ -41,22 +41,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Perbarui</button>
             </form>
-        </div>
+            <br></br>
+            <h3>Ganti Password</h3>
         
-        </div>
-    </div>
-    <br></br>
-    <div class="container">
-
-        <div class="row">
-        <div class="col-sm-4">
-       
-        <br></br>
-        </div>
-
-        <div class="col-sm-8">
-        <h3>Ganti Password</h3>
-        <hr>
         
             <form>
                 <div class="form-group">
@@ -79,5 +66,13 @@
         </div>
         
         </div>
-    </div>
-</section>
+        </div>
+   
+    
+    
+
+        
+   
+    
+    @include('Home.footer')
+@endsection

@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f7d4a9;
+    background-color: #fff;
 }
 
 nav,
@@ -45,12 +45,10 @@ main p {
     font-size: 12px;
 }
 
-.contact hr{
-	width:100%;
-	border-top:3px solid #666;
+.bungkus{
+	padding-left: 15%;
 }
 
-.contact h2{
-	color:white;
+.judul{
+    font-size:100px;
 }
-
