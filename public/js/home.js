@@ -1,10 +1,10 @@
-AOS.init();
-
 let tops = 0;
 let temp = 0;
 let lefts = 0;
 let temp_letfs = 0;
 $(document).ready(function () {
+    AOS.init();
+
     setInterval(() => {
         if (tops == 0) {
             temp = -100
@@ -35,6 +35,7 @@ $(document).ready(function () {
     });
 
 });
+
 var goUp = () => {
     if (tops <= 0 && tops >= -200) {
         tops += 100
@@ -53,6 +54,7 @@ var goUp = () => {
     }
     $(".mainSection .rightSection .text-background h1")
         .css("left", `${lefts}%`)
+
 };
 
 var goDown = () => {
