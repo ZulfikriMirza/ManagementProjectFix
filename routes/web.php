@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\Showcase;
-use App\Http\Controllers\CartController;
+use App\Http\Livewire\Showcase;
+use App\Http\Livewire\CartComponent;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserPageController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use App\Http\livewire\CheckoutController;
+use App\Http\Livewire\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +31,7 @@ Route::get('/', [HomeController::class, 'index'])->name("home");
 
 
 //------------------Controller Showcase------------------//
-Route::get('/showcase', [Showcase::class, 'index'])->name("showcase");
+Route::get('/showcase', [Showcase::class, 'render'])->name("showcase");
 
 
 
@@ -50,6 +50,6 @@ Route::get('/contact', [ContactController::class, 'index'])->name("contact");
 
 
 //------------------Controller Checkout------------------//
-Route::get('/cart', [CartController::class, 'index'])->name("cart");
+Route::get('/cart', [CartComponent::class, 'render'])->name("cart");
 
 Route::get('/checkout', [CheckoutController::class, 'render'])->name("checkout");
