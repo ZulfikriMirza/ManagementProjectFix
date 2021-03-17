@@ -4,15 +4,35 @@
         <p><a href="{{ route('aboutus') }}"><span></span>About Us<span></span></a></p>
         <p><a href="{{ route('showcase') }}"><span></span>Showcase<span></span></a></p>
         <p><a href="{{ route('contact') }}"><span></span>Contact<span></span></a></p>
-        <p><a href="{{ route('cart') }}"><span></span>Check your cart<span></span></a></p>
     </div>
     <div class="navbars-rights">
-        <i class="fas fa-shopping-cart"></i>
-        <div class="cart-show" id="cart-show-id">
-            <p class="mt-2">Yet! Cart is empty!</p>
-            <img src="{{ asset('Home/Materials/3298067.jpg')}}">
+        <div class="btn-group mr-5">
+            <i type="button" class="fas fa-shopping-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+            <div class="dropdown-menu dropdown-menu-right cart-item text-center">
+                <p class="mt-2">Yet! Cart is empty!</p>
+                <img src="{{ asset('Home/Materials/3298067.jpg')}}">
+                <p><a href="{{ route('cart') }}">cart</a></p>
+            </div>
         </div>
+        @guest
         <h4><a href="{{ route('login') }}">LOGIN</a> | <a href="{{ route('register') }}">REGISTER</a></h4>
+        @endguest
+        @auth
+        <div class="btn-group">
+
+            @if (Auth::user()->profile_photo_url)
+            <img type="button" class="dropdown-toggle mr-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{{  Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+            @else
+            <img type="button" class="dropdown-toggle mr-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}&color=7F9CF5&background=EBF4FF" alt="{{ Auth::user()->name }}" />
+            @endif
+            <div class="dropdown-menu dropdown-menu-right">
+                <p class="dropdown-header">Manage Account</p>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item" type="button">Profile</button>
+                <button class="dropdown-item" type="button">Logout</button>
+            </div>
+        </div>
+        @endauth
     </div>
     <div class="hamburger-menu">
         <div></div>
@@ -30,10 +50,13 @@
             <h4><a href="#">LOGIN</a> | <a href="#">REGISTER</a></h4>
         </div>
         <div class="col-5 ham-right">
-            <i class="fas fa-shopping-cart"></i>
-            <div class="cart-show" id="cart-show-id">
-                <p class="mt-2" style="color: #282828;">Yet! Cart is empty!</p>
-                <img src="{{ asset('Home/Materials/3298067.jpg')}}">
+            <div class="btn-group">
+                <i type="button" class="fas fa-shopping-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                <div class="dropdown-menu dropdown-menu-right cart-item text-center">
+                    <p class="mt-2">Yet! Cart is empty!</p>
+                    <img src="{{ asset('Home/Materials/3298067.jpg')}}">
+                    <p><a href="{{ route('cart') }}">cart</a></p>
+                </div>
             </div>
         </div>
     </div>
