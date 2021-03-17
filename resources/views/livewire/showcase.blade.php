@@ -32,10 +32,10 @@
                     <div class="card">
                         <img class="card-img-top" src="{{ asset('produkListJasa') }}/{{$product->image}}" alt="{{$product->name}}">
                         <div class="card-body">
-                            <p class="card-text">{{$product->name}}</p>
-                            <div class="wrap-price"><span class="product-price">{{$product->harga}}</span></div>
+                            <p class="text-center font-weight-bold card-text">{{$product->name}}</p>
+                            <div class="text-center font-weight-bold wrap-price"><span class="product-price">Rp. {{$product->harga}}</span></div>
                             <!-- Buttonnya percobaan doang  -->
-                            <a href="#" class="btn add-to-cart" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->harga}})">Add To Cart</a>
+                            <button wire:click="addItem({{$product->id}})" class="btn btn-primary btn-sm btn-block">Add To Cart</a>
                         </div>
                     </div>
                 </div>

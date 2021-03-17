@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '887f506f97bc7c4f8ff1f132d530914905739dc7',
+    'reference' => '42a8b63f0e64390ea8ef0a36e794febb43269882',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -68,6 +68,15 @@ private static $installed = array (
       array (
         0 => '*',
       ),
+    ),
+    'darryldecode/cart' => 
+    array (
+      'pretty_version' => '4.2.1',
+      'version' => '4.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2ad23e070af341da80300ef990b1fb529af88893',
     ),
     'dasprid/enum' => 
     array (
@@ -246,15 +255,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
-    ),
-    'hardevine/shoppingcart' => 
-    array (
-      'pretty_version' => '2.9',
-      'version' => '2.9.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2fc6eff895ae6d94978125f6bc65aceadc4873c5',
     ),
     'illuminate/auth' => 
     array (
@@ -532,7 +532,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '887f506f97bc7c4f8ff1f132d530914905739dc7',
+      'reference' => '42a8b63f0e64390ea8ef0a36e794febb43269882',
     ),
     'laravel/sail' => 
     array (

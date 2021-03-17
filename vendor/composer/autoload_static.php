@@ -151,7 +151,6 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
             'GrahamCampbell\\ResultType\\' => 26,
-            'Gloudemans\\Shoppingcart\\' => 24,
         ),
         'F' => 
         array (
@@ -175,6 +174,7 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
             'DeepCopy\\' => 9,
             'Database\\Seeders\\' => 17,
             'Database\\Factories\\' => 19,
+            'Darryldecode\\' => 13,
             'DASPRiD\\Enum\\' => 13,
         ),
         'C' => 
@@ -466,10 +466,6 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
         ),
-        'Gloudemans\\Shoppingcart\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/hardevine/shoppingcart/src',
-        ),
         'Fruitcake\\Cors\\' => 
         array (
             0 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
@@ -525,6 +521,10 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
         'Database\\Factories\\' => 
         array (
             0 => __DIR__ . '/../..' . '/database/factories',
+        ),
+        'Darryldecode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode',
         ),
         'DASPRiD\\Enum\\' => 
         array (
@@ -785,6 +785,21 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
         'DASPRiD\\Enum\\Exception\\SerializeNotSupportedException' => __DIR__ . '/..' . '/dasprid/enum/src/Exception/SerializeNotSupportedException.php',
         'DASPRiD\\Enum\\Exception\\UnserializeNotSupportedException' => __DIR__ . '/..' . '/dasprid/enum/src/Exception/UnserializeNotSupportedException.php',
         'DASPRiD\\Enum\\NullValue' => __DIR__ . '/..' . '/dasprid/enum/src/NullValue.php',
+        'Darryldecode\\Cart\\Cart' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Cart.php',
+        'Darryldecode\\Cart\\CartCollection' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/CartCollection.php',
+        'Darryldecode\\Cart\\CartCondition' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/CartCondition.php',
+        'Darryldecode\\Cart\\CartConditionCollection' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/CartConditionCollection.php',
+        'Darryldecode\\Cart\\CartServiceProvider' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/CartServiceProvider.php',
+        'Darryldecode\\Cart\\Exceptions\\InvalidConditionException' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Exceptions/InvalidConditionException.php',
+        'Darryldecode\\Cart\\Exceptions\\InvalidItemException' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Exceptions/InvalidItemException.php',
+        'Darryldecode\\Cart\\Exceptions\\UnknownModelException' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Exceptions/UnknownModelException.php',
+        'Darryldecode\\Cart\\Facades\\CartFacade' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Facades/CartFacade.php',
+        'Darryldecode\\Cart\\Helpers\\Helpers' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Helpers/Helpers.php',
+        'Darryldecode\\Cart\\ItemAttributeCollection' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/ItemAttributeCollection.php',
+        'Darryldecode\\Cart\\ItemCollection' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/ItemCollection.php',
+        'Darryldecode\\Cart\\Validators\\CartConditionValidator' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Validators/CartConditionValidator.php',
+        'Darryldecode\\Cart\\Validators\\CartItemValidator' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Validators/CartItemValidator.php',
+        'Darryldecode\\Cart\\Validators\\Validator' => __DIR__ . '/..' . '/darryldecode/cart/src/Darryldecode/Cart/Validators/Validator.php',
         'Database\\Factories\\CategoryFactory' => __DIR__ . '/../..' . '/database/factories/CategoryFactory.php',
         'Database\\Factories\\ProductFactory' => __DIR__ . '/../..' . '/database/factories/ProductFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
@@ -1556,16 +1571,6 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
         'Fideloper\\Proxy\\TrustedProxyServiceProvider' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustedProxyServiceProvider.php',
         'Fruitcake\\Cors\\CorsServiceProvider' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/CorsServiceProvider.php',
         'Fruitcake\\Cors\\HandleCors' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/HandleCors.php',
-        'Gloudemans\\Shoppingcart\\CanBeBought' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/CanBeBought.php',
-        'Gloudemans\\Shoppingcart\\Cart' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Cart.php',
-        'Gloudemans\\Shoppingcart\\CartItem' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/CartItem.php',
-        'Gloudemans\\Shoppingcart\\CartItemOptions' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/CartItemOptions.php',
-        'Gloudemans\\Shoppingcart\\Contracts\\Buyable' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Contracts/Buyable.php',
-        'Gloudemans\\Shoppingcart\\Exceptions\\CartAlreadyStoredException' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Exceptions/CartAlreadyStoredException.php',
-        'Gloudemans\\Shoppingcart\\Exceptions\\InvalidRowIDException' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Exceptions/InvalidRowIDException.php',
-        'Gloudemans\\Shoppingcart\\Exceptions\\UnknownModelException' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Exceptions/UnknownModelException.php',
-        'Gloudemans\\Shoppingcart\\Facades\\Cart' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Facades/Cart.php',
-        'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/ShoppingcartServiceProvider.php',
         'GrahamCampbell\\ResultType\\Error' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Error.php',
         'GrahamCampbell\\ResultType\\Result' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Result.php',
         'GrahamCampbell\\ResultType\\Success' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Success.php',

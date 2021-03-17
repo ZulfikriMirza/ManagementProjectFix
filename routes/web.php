@@ -50,6 +50,10 @@ Route::get('/contact', [ContactController::class, 'index'])->name("contact");
 
 
 //------------------Controller Checkout------------------//
-Route::get('/cart', [CartComponent::class, 'render'])->name("cart");
 
-Route::get('/checkout', [CheckoutController::class, 'render'])->name("checkout");
+
+// Kode buat route kalo pas masuk page nya harus login
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/cart', [CartComponent::class, 'render'])->name("cart");
+    Route::get('/checkout', [CheckoutController::class, 'render'])->name("checkout");
+});
