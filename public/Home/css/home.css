@@ -29,11 +29,6 @@ h1,h2,h3,h4{
     color: rgb(230, 230, 230) !important;
 }
 
-.navbars .navbars-rights > .cart-show{
-    top: 65% !important;
-    z-index: 9 !important;
-}
-
 /* ==========================
     MAIN IMAGE SECTION
   ===========================*/
@@ -44,6 +39,7 @@ h1,h2,h3,h4{
     left: 50%;
     width: 400px;
     height: 200px;
+    z-index: 5;
     overflow: hidden;
 }
 
