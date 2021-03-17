@@ -31,7 +31,7 @@ Route::get('/', [HomeController::class, 'index'])->name("home");
 
 
 //------------------Controller Showcase------------------//
-Route::get('/showcase', [Showcase::class, 'index'])->name("showcase");
+Route::get('/showcase', [Showcase::class, 'render'])->name("showcase");
 
 
 
