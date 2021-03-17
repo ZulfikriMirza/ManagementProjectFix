@@ -33,12 +33,20 @@ h1,p,a,h4{
 }
 .navbars .btn-group .cart-item a{
     font-size: 12px;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 4px;
     background-color: #273446;
     text-decoration: none;
     text-transform: uppercase;
     color: #e0e0e0;
+}
+
+.navbars .authentication .dropdown-menu a,
+.isi-hamburger-menu .authentication .dropdown-menu a{
+    text-decoration: none;
+    color: #282828;
+    font-weight: 400;
+    text-transform: capitalize;
 }
 
 .navbars{
@@ -124,7 +132,8 @@ h1,p,a,h4{
     justify-content: baseline;
 }
 
-.navbars .navbars-rights .btn-group img{
+.navbars .navbars-rights .btn-group img,
+.isi-hamburger-menu .btn-group img{
     margin-top: -10px;
     border-radius: 50%;
     cursor: pointer;
