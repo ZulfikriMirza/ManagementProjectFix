@@ -5720,7 +5720,7 @@ input[type='button'].btn-block
 {
     margin-top: -1px;
 
-    border-top-left-radius: 0;
+    border-top-left-radius: 0z;
     border-top-right-radius: 0;
 }
 
