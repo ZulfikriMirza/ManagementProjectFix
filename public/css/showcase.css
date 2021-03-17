@@ -51,7 +51,14 @@ main p {
     border: none;
 }
 
-.page1 {
-    padding: 5px;
-    position: relative;
+/* .row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
 }
+
+.project-items .project_row_2 img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin: 20px;
+} */
