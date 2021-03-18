@@ -1,4 +1,3 @@
-@include('navbar.index')
 <div class="img-section">
     <img src="{{ asset('Home/Materials/material_0000_Layer-2.png') }}">
     <img src="{{ asset('Home/Materials/material_0001_Layer-4.png') }}">

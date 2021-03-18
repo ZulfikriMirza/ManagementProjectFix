@@ -7,7 +7,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{{ asset('Home/slick/slick.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('Home/slick/slick-theme.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('Home/css/home_footer.css') }}"/>
 
     <!--===============================
         FONT AWESOME FILE
@@ -58,6 +57,5 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 
-@include('Home.footer')
 
 @endsection
