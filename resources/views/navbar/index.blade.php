@@ -15,7 +15,7 @@
             </div>
         </div>
         @guest
-        <h4><a href="{{ route('login') }}">LOGIN</a> | <a href="{{ route('register') }}">REGISTER</a></h4>
+        <h4><a href="{{ route('login') }}">LOGIN | REGISTER</a></h4>
         @endguest
         @auth
         <div class="btn-group authentication">

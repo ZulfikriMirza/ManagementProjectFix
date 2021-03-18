@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>How to Design Login & Registration Form Transition</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}">
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+  <title>Arsitek - Login</title>
 </head>
 
 <body>
@@ -18,11 +18,14 @@
     {{ session('status') }}
   </div>
   @endif
+  <div class="login-home">
+    <a href="{{ route('home') }}">Home</a>
+  </div>
   <div class="cont">
     <div class="form sign-in">
       <form method="POST" action="{{ route('login') }}">
         @csrf
-        <h2>Log In</h2>
+        <h2>Log In </h2>
 
         <label>
           <span>Email Address</span>
@@ -132,6 +135,7 @@
     </div>
   </div>
   <script src="{{ asset('js/login.js') }}"></script>
+
 </body>
 
 </html>

@@ -30,6 +30,40 @@ input, button{
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
+.login-home a{
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  padding: 20px;
+  top: 7%;
+  left: 15%;
+  z-index: 99;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #282828;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.3);
+}
+.login-home a:hover{
+  letter-spacing: 1px;
+  font-size: 13px;
+  background-color: rgb(240, 240, 240);
+  backdrop-filter: blur(20px);
+  text-transform: uppercase;
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2) inset;
+  -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2) inset;
+  box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2) inset;
+}
+
 .form{
   position: relative;
   width: 640px;
