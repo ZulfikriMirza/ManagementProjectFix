@@ -34,7 +34,6 @@ Route::get('/', [HomeController::class, 'index'])->name("home");
 Route::get('/showcase', [Showcase::class, 'render'])->name("showcase");
 
 
-
 //------------------Controller User------------------//
 Route::get('/user', [UserPageController::class, 'index']);
 
@@ -45,15 +44,19 @@ Route::get('/aboutus', [AboutUsController::class, 'index'])->name("aboutus");
 
 
 
+
 //------------------Controller Contact------------------//
 Route::get('/contact', [ContactController::class, 'index'])->name("contact");
 
 
 //------------------Controller Checkout------------------//
 
-
 // Kode buat route kalo pas masuk page nya harus login
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/cart', [CartComponent::class, 'render'])->name("cart");
     Route::get('/checkout', [CheckoutController::class, 'render'])->name("checkout");
+});
+
+// Admin Section
+Route::middleware(["auth", "admin"])->prefix("admin")->name("admin")->group(function () {
 });

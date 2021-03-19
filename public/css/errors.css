@@ -1,0 +1,56 @@
+.container.Forbidden{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
+}
+.container.Forbidden img,
+.container.PageNotFound img{
+    margin-top: -40px;
+    width: 500px;
+    height: auto;
+}
+
+.container.Forbidden h2{
+    margin-top: -30px;
+}
+
+.container.Forbidden a,
+.container.PageNotFound a{
+    text-decoration: none;
+    display: block;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(252deg, rgba(0,125,254,1) 15%, rgba(45,117,191,1) 100%);
+}
+
+.container.Forbidden a:hover,
+.container.PageNotFound a:hover{
+    background: linear-gradient(252deg, rgba(64,157,254,1) 13%, rgba(102,172,245,1) 100%);
+}
+
+.container.PageNotFound{
+    width: 100%;
+    height: 100%;
+}
+
+.container.PageNotFound .row{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container.PageNotFound img{
+    width: 600px;
+}
+.container.PageNotFound a{
+    width: 141px;
+    display: block;
+    margin-top: 20px;
+}
