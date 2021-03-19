@@ -14,15 +14,19 @@
     <link href="{{ asset('Home/fontawesome_css/all.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/showcase.css') }}">
 
+
+    @livewireStyles
+
+    
     @yield('css')
 
     <title>Arsitek Store - @yield('title')</title>
-    @livewireStyles
+    
 </head>
 
 <body>
     @yield('content')
-    {{isset($slot) ? $slot : null}}
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

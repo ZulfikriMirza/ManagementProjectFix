@@ -60,10 +60,13 @@ class CartComponent extends Component
             'carts' => $cartData,
             'summary' => $summary
         ]);
+
     }
 
     public function addItem($id){
+
         $rowId = "Cart".$id;
+        dd($rowId);
         $cart = \Cart::session(Auth()->id())->getContent();
         $cekItemId = $cart->whereIn('id', $rowId);
 
@@ -74,7 +77,11 @@ class CartComponent extends Component
                     'value' => 1
                 ]
             ]);
+
+
+
         }else{
+
             $product = Product::findOrFail($id);
             \Cart::session(Auth()->id())->add([
                 'id' => "Cart".$product->id,
@@ -86,5 +93,6 @@ class CartComponent extends Component
                 ],
             ]);
         }
+        return redirect()->route('Livewire.Showcase');
     }
 }
