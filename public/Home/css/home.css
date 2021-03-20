@@ -29,6 +29,11 @@ h1,h2,h3,h4{
     color: rgb(230, 230, 230) !important;
 }
 
+.navbars .navbars-rights > .cart-show{
+    top: 65% !important;
+    z-index: 9 !important;
+}
+
 /* ==========================
     MAIN IMAGE SECTION
   ===========================*/
@@ -39,8 +44,8 @@ h1,h2,h3,h4{
     left: 50%;
     width: 400px;
     height: 200px;
-    z-index: 5;
     overflow: hidden;
+    z-index: 9;
 }
 
 .img-section img{
@@ -49,6 +54,7 @@ h1,h2,h3,h4{
     width: 400px;
     height: 200px;
     transition: 0.3s ease-in-out;
+    object-fit: cover;
 }
 
 .mainSection{
@@ -136,7 +142,7 @@ h1,h2,h3,h4{
 
 .mainSection .rightSection .text-title{
     width: 100%;
-    height: 150px;
+    height: 160px;
     overflow: hidden;
 }
 .mainSection .rightSection h3{
@@ -184,6 +190,7 @@ h1,h2,h3,h4{
         width: 600px;
         height: 300px;
         z-index: 5;
+        object-fit: cover;
     }
     /* ==========================
         ICON SECTION
@@ -249,6 +256,7 @@ h1,h2,h3,h4{
         width: 550px;
         height: 300px;
         transition: 0.3s ease-in-out;
+        object-fit: cover;
     }
 
     .mainSection{
@@ -331,11 +339,6 @@ h1,h2,h3,h4{
         
     }
 
-    .mainSection .rightSection .text-title{
-        width: 100%;
-        height: 150px;
-        overflow: hidden;
-    }
     .mainSection .rightSection h3{
         top: 0%;
         font-size: 24px;
@@ -387,6 +390,8 @@ h1,h2,h3,h4{
         height: 500px;
         z-index: 5;
         transition: 0.3s ease-in-out;
+        object-fit: cover;
+
     }
 
     .mainSection{

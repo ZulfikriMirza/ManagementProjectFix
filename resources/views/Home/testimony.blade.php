@@ -19,7 +19,7 @@
     </div>
     <div>
         <div class="container testimony">
-            <img src="{{ asset('Home/Materials/projects_0002_Layer-2.png') }}">
+            <img src="{{ asset('Home/Materials/testimony_scarlet.png') }}">
             <div class="comment">
                 <img src="{{ asset('Home/Materials/scarlett-johansson-_190724090817-370.jpg') }}">
                 <div class="dialog">

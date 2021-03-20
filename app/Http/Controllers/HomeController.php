@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\AdminHome;
+use App\Models\AdminListJasa;
+use App\Models\AdminProject;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,7 +17,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view("Home.index");
+        $adminHome = AdminHome::all();
+        $adminProject = AdminProject::all();
+        $adminListJasa = AdminListJasa::all();
+        return view("Home.index", [
+            "adminHome" => $adminHome,
+            "adminProject" => $adminProject,
+            "adminListJasa" => $adminListJasa
+        ]);
     }
 
     /**

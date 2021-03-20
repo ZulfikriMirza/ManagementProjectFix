@@ -3,8 +3,9 @@
 use App\Http\Livewire\Showcase;
 use App\Http\Livewire\CartComponent;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserPageController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\AdminHomeController;
+use App\Http\Controllers\AdminShowcaseController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -34,11 +35,6 @@ Route::get('/', [HomeController::class, 'index'])->name("home");
 Route::get('/showcase', [Showcase::class, 'render'])->name("showcase");
 
 
-//------------------Controller User------------------//
-Route::get('/user', [UserPageController::class, 'index']);
-
-
-
 //------------------Controller About Us------------------//
 Route::get('/aboutus', [AboutUsController::class, 'index'])->name("aboutus");
 
@@ -57,6 +53,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/checkout', [CheckoutController::class, 'render'])->name("checkout");
 });
 
+
 // Admin Section
-Route::middleware(["auth", "admin"])->prefix("admin")->name("admin")->group(function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
+    Route::get('/home', [AdminHomeController::class, 'index'])->name('admin.home');
+    Route::post('/home/{id}', [AdminHomeController::class, 'update'])->name('admin.home.post');
+    Route::get('/showcase', [AdminShowcaseController::class, 'index'])->name('admin.showcase');
+    Route::post('/showcase/{id}', [AdminShowcaseController::class, 'update']);
 });

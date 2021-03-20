@@ -1,7 +1,7 @@
 <div class="img-section">
-    <img src="{{ asset('Home/Materials/material_0000_Layer-2.png') }}">
-    <img src="{{ asset('Home/Materials/material_0001_Layer-4.png') }}">
-    <img src="{{ asset('Home/Materials/material_0002_Layer-1.png') }}">
+    <img src="{{ asset('storage/LandingPage/' . $adminHome[0]->filename) }}">
+    <img src="{{ asset('storage/LandingPage/' . $adminHome[1]->filename) }}">
+    <img src="{{ asset('storage/LandingPage/' . $adminHome[2]->filename) }}">
 </div>
 <div class="row mainSection no-gutters">
     <div class="col-md-7 col-lg-8 leftSection">
@@ -28,9 +28,9 @@
             <h2>03</h2>
         </div>
         <div class="text-title">
-            <h3>Proffesional<br>Apartmen<br>Design</h3>
-            <h3>Elegant Home<br>Appearance<br>Design</h3>
-            <h3>Interior<br>Design</h3>
+            <h3><?= join(" <br> ", array_slice(explode(" ", $adminHome[0]->description), 0, 3)) ?></h3>
+            <h3><?= join(" <br> ", array_slice(explode(" ", $adminHome[1]->description), 0, 3)) ?></h3>
+            <h3><?= join(" <br> ", array_slice(explode(" ", $adminHome[2]->description), 0, 3)) ?></h3>
         </div>
     </div>
 </div>

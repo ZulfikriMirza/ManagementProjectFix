@@ -1,5 +1,9 @@
 @extends('ArgonDashboard.argon_dashboard_template')
 
+@section('css')
+<link rel="stylesheet" href="{{ mix('css/app.css') }}">
+@endsection
+
 @section('content')
 <x-app-layout>
     <x-slot name="header">
@@ -46,4 +50,8 @@
         </div>
     </div>
 </x-app-layout>
+@endsection
+
+@section('js')
+<script src="{{ mix('js/app.js') }}" defer></script>
 @endsection

@@ -15,6 +15,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="{{ asset('Argon_Dashboard/vendor/nucleo/css/nucleo.css') }} " type="text/css">
     <link rel="stylesheet" href="{{ asset('Argon_Dashboard/vendor/@fortawesome/fontawesome-free/css/all.min.css') }} " type="text/css">
+
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('Argon_Dashboard/css/argon.css?v=1.2.0') }} " type="text/css">
@@ -22,8 +23,9 @@
 
     <!-- livewire laravel -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <script src="{{ mix('js/app.js') }}" defer></script>
+
+    <!-- Additional CSS -->
+    @yield('css')
 </head>
 
 <body>
@@ -38,6 +40,63 @@
             </div>
             <div class="navbar-inner">
                 <!-- Collapse -->
+                @if(Auth::user()->level == 'admin')
+                <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+                    <!-- Nav items -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('dashboard') }}">
+                                <i class="ni ni-tv-2 text-white"></i>
+                                <span class="nav-link-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('profile.show') }}">
+                                <i class="ni ni-single-02 text-white"></i>
+                                <span class="nav-link-text">Profile</span>
+                            </a>
+                        </li>
+
+                        <!-- Divider -->
+                        <hr class="my-3 bg-white">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.home') }}">
+                                <i class="ni ni-settings text-white"></i>
+                                <span class="nav-link-text">Edit Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.showcase') }}">
+                                <i class="ni ni-settings text-white"></i>
+                                <span class="nav-link-text">Edit Showcase</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('contact') }}">
+                                <i class="ni ni-settings text-white"></i>
+                                <span class="nav-link-text">Edit About Us</span>
+                            </a>
+                        </li>
+
+                        <!-- Divider -->
+                        <hr class="my-3 bg-white">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <i class="ni ni-button-power text-white"></i>
+                                    <span href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                this.closest('form').submit();" class="nav-link-text ml-3">
+                                        {{ __('Logout') }}
+                                    </span>
+                                </form>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                @else
                 <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                     <!-- Nav items -->
                     <ul class="navbar-nav">
@@ -99,6 +158,7 @@
                         </li>
                     </ul>
                 </div>
+                @endif
             </div>
         </div>
     </nav>
@@ -144,6 +204,10 @@
         </nav>
         @yield('content')
     </div>
+
+
+    <!-- Additional Javascript -->
+    @yield('js')
 
     <!-- Argon Scripts -->
     <!-- Core -->
