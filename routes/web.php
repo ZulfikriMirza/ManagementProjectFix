@@ -58,6 +58,9 @@ Route::group(['middleware' => ['auth']], function () {
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/home', [AdminHomeController::class, 'index'])->name('admin.home');
     Route::post('/home/{id}', [AdminHomeController::class, 'update'])->name('admin.home.post');
+
     Route::get('/showcase', [AdminShowcaseController::class, 'index'])->name('admin.showcase');
-    Route::post('/showcase/{id}', [AdminShowcaseController::class, 'update']);
+    Route::post('/showcase', [AdminShowcaseController::class, 'store'])->name('admin.showcase.store');
+    Route::post('/showcase/{id}', [AdminShowcaseController::class, 'update'])->name('admin.showcase.post');
+    Route::get('/showcase/delete/{id}', [AdminShowcaseController::class, 'destroy'])->name('admin.showcase.destroy');
 });

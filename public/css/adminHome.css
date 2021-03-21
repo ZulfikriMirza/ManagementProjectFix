@@ -9,6 +9,16 @@ img{
     object-fit: cover;
 }
 
+.container.showcase img{
+    height: 400px;
+    width: 400px;
+}
+
+.container.showcase span{
+    color: rgb(201, 0, 0);
+    font-weight: 500;
+}
+
 h1:first-child{
     padding: 20px 0px 0px 20px ;
 }
