@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire\Showcase;
+use App\Http\Controllers\ShowcaseController;
 use App\Http\Livewire\CartComponent;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutUsController;
@@ -32,7 +32,8 @@ Route::get('/', [HomeController::class, 'index'])->name("home");
 
 
 //------------------Controller Showcase------------------//
-Route::get('/showcase', [Showcase::class, 'render'])->name("showcase");
+Route::get('/showcase', [ShowcaseController::class, 'index'])->name("showcase");
+Route::get('/showcase/{id}', [ShowcaseController::class, 'addItem'])->name("add-item");
 
 
 //------------------Controller About Us------------------//
