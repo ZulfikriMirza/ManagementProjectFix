@@ -160,11 +160,9 @@ class AdminShowcaseController extends Controller
      */
     public function destroy($id)
     {
-        try {
-            DB::table('products')->where('id', $id)->delete();
-            return back()->with('success', "You're successfully delete the data!");
-        } catch (Exception $e) {
-            return back()->with('error', "Something went wrong! Please Try Again");
-        }
+        $filename = Product::where('id', $id)->first()->image;
+        DB::table('products')->where('id', $id)->delete();
+        Storage::delete('public/produkListJasa/' . $filename);
+        return back()->with('success', "You're successfully delete the data!");
     }
 }
