@@ -18,17 +18,23 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+    protected $table = "users";
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
 
+    public function cart()
+    {
+        return $this->hasMany(Cart::class);
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

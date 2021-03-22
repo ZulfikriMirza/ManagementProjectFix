@@ -23,8 +23,6 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\ShowcaseController' => $baseDir . '/app/Http/Controllers/ShowcaseController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
-    'App\\Http\\Livewire\\CartComponent' => $baseDir . '/app/Http/Livewire/CartComponent.php',
-    'App\\Http\\Livewire\\CheckoutController' => $baseDir . '/app/Http/Livewire/CheckoutController.php',
     'App\\Http\\Middleware\\AdminValidation' => $baseDir . '/app/Http/Middleware/AdminValidation.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
