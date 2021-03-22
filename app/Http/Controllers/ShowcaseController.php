@@ -6,10 +6,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\User;
 use Session;
 
 class ShowcaseController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -18,8 +20,10 @@ class ShowcaseController extends Controller
     public function index()
     {
         $products = Product::all();
+        $users = User::all();
         return view('Showcase.showcase', [
-            'products' => $products
+            'products' => $products,
+            'users' => $users
         ]);
     }
 
@@ -91,8 +95,40 @@ class ShowcaseController extends Controller
 
     public function addItem($id)
     {
-        // dd($id);
-        $products = Product::all();
-        Cart::add($id, $name, 1, $harga);
+
+        // dd($id, $name);
+        Cart::all();
+        $produk = Product::find($id);
+        $user = User::find($id);
+        $cart_id = $user['id'];
+        $cart_name = $produk->name;
+        $cart_harga = $produk->harga;
+        $cart = Cart::create([
+            'user_id' => $cart_id,
+            'name' => $cart_name,
+            'harga' => $cart_harga,
+        ]);
+        $cart->save();
+        return back();
+        // jadi urang ngambil id dari product buat nge masukin nama harga ke database cart
+        // $carts = Cart::all();
+        // Cart::add($carts->$product_id, $carts->$name, 1, $carts->$harga);
+        // return view('Showcase.showcase');
+    }
+
+    public function getCart(Request $request)
+    {
+        $carts = auth()->user()->cart;
+        return view('cart.cart', [
+            'carts' => $carts,
+        ]);
+    }
+
+    public function RemoveItem($id)
+    {
+        Cart::all();
+        $carts = Cart::find($id);
+        $carts->delete();
+        return back();
     }
 }
