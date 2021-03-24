@@ -20,8 +20,11 @@ class CreateProductsTable extends Migration
             $table->integer('harga');
             $table->string('image')->nullable();
             $table->text('description')->nullable();
-            $table->bigInteger('category_id')->unsigned()->nullable();
             $table->timestamps();
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         });
     }
 
