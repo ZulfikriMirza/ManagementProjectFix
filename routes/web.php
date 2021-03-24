@@ -50,7 +50,7 @@ Route::get('/contact', [ContactController::class, 'index'])->name("contact");
 //------------------Controller Checkout------------------//
 
 // Kode buat route kalo pas masuk page nya harus login
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/cart', [HomeController::class, 'getCart'])->name("cart");
     Route::get('/cart/{id}', [HomeController::class, 'RemoveItem'])->name("remove");
     Route::get('/checkout', [CheckoutController::class, 'index'])->name("checkout");
