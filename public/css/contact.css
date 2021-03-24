@@ -9,167 +9,168 @@ body{
     background-color: #fff;
 }
 
-nav{
-    font-family: 'Exo', sans-serif;
-    font-weight: 800;
-    background-color: #fff;
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
 }
 
-h1{
+h1,h2,h3,h4{
     font-family: 'Exo', sans-serif;
     font-weight: 800;
-    text-transform: uppercase;
-    font-size: 25px;
-    } 
+}
 
-h2,h3,h4,h5{
+svg{
+    width: 100%;
+    position: relative;
+}
+
+h5{
     font-family: 'Exo', sans-serif;
-    font-weight: 800;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 label{
     font-family: 'Exo', sans-serif;
     font-weight: 400;
+    color: rgb(156, 156, 156);
 }
 
-main {
-    
-    color: black;
-    display: flex;
-    height: 100%;
+object{
+    position: absolute;
+}
+
+.jumbotron-fluid.contact{
     width: 100%;
-    margin-bottom: 50px;
+    height: 50vh;
     position: relative;
-    background-size: cover;
-    font-family: 'Exo', sans-serif;
-    font-weight: 800;
+    z-index: 1;
 }
-
-main h1, main button{
-    text-transform: uppercase;
-}
-
-main h1{
-    font-size: 25px;
-}
-main p{
-    font-size: 12px;
-}
-
-
-.form{
-    display:inline-block;
-    width:50%;
-    vertical-align:top;
-    text-align: left;
-}
-
-.form-card {
-    text-align: center;
-    width: 70%; 
-    height: 100%; 
-  
-    
-}
-.form-card-body {
-    border-top: 0px;
-    text-align: center;
-    width: 70%; 
-    height: 100%; 
-    
-}
-
-
-.jumbotron {
-    background-size: cover;
-    padding: 30px;
-    height: 70vh;
-}
-
-.jumbotron img{
-    width: 200px;
-    border: 3px solid #666;
-}
-
-}
-
-.suqre{
-    width:500px;
-    height:100px;
-    border:1px solid #000;
-}
-
-
-.column {
-    border: 3px solid #666;
-    float: all;
+.jumbotron-fluid.contact img{
     width: 100%;
-    margin-bottom: 16px;
-    padding: 50 50px;
+    height: 100%;
+    object-fit: cover;
 }
 
-
-.kotak {
-  width: 70%; 
-  margin-left: auto; 
-  margin-right: auto;
+.container .row.form-contact{
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    margin-top: -100px;
+    -webkit-box-shadow: -2px 7px 27px -2px rgba(0,0,0,0.46);
+    -moz-box-shadow: -2px 7px 27px -2px rgba(0,0,0,0.46);
+    box-shadow: -2px 7px 27px -2px rgba(0,0,0,0.46);
 }
 
-/*.kotak p {
-  opacity: 0;
-  transition: 0.5s;
+.container .row .col-sm-6.contactInformation{
+    padding: 30px;
+    background-color: #4071ce;
+    color: white;
 }
 
-.kotak:hover p {
-  opacity: 1;
-}*/
-
-
-.card-icon{
-  font-size: 30px;
-  width: 50px;
-  height: 50px;
-  background: none;
-  
-  border-radius: 50%;
-  text-align: center;
-  line-height: 50px !important;
-  transition: 0.3s linear;
-  cursor: pointer;
+.container .row.form-contact .col-sm-6.contactForm{
+    padding: 30px;
 }
 
-.card-icon:hover{
-  background: #ff6348;
+.container input,.container textarea{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    transition: 0.3s ease-in-out;
 }
 
-.contact100-form {
-  width: 50%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 56px 55px 63px 55px;
+.container input:focus,.container textarea:focus{
+    outline: none;
 }
 
-.contact100-form-title {
-  width: 100%;
-  display: block;
-  font-family: Poppins-Regular;
-  font-size: 30px;
-  color: #333333;
-  line-height: 1.2;
-  text-align: center;
-  padding-bottom: 33px;
+.container .row.form-contact .col-sm-6.contactForm i{
+    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+    font-size: 20px;
+    float: right;
+    margin-top: 40px;
+    border-radius: 50%;
+    background-color: #4071ce;
+    transform: scale(1);
+    transition: 0.1s linear;
+}
+.container .row.form-contact .col-sm-6.contactForm i:hover{
+    transform: scale(0.92);
 }
 
+.container .row.form-contact .col-sm-6.contactInformation h3{
+    font-size: 20px;
+}
+.container .row.form-contact .col-sm-6.contactInformation p{
+    font-size: 14px;
+}
+.container .row.form-contact .col-sm-6.contactInformation .contact-icon{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.container .row.form-contact .col-sm-6.contactInformation .contact-icon i{
+    padding: 10px 5px;
+    font-size: 20px;
+}
+@media (min-width: 991.98px) {
+    .jumbotron-fluid.contact{
+        height: 80vh;
+    }
+    
+    .container .row .col-sm-6.contactInformation{
+        padding: 70px 50px;
+    }
 
+    .container .row.form-contact .col-sm-6.contactForm{
+        padding: 70px 50px;
+    }
 
+    .container input,.container textarea{
+        margin-top: 20px;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid black;
+        transition: 0.3s ease-in-out;
+    }
 
+    .container input:focus,.container textarea:focus{
+        outline: none;
+    }
 
+    .container .row.form-contact .col-sm-6.contactForm i{
+        cursor: pointer;
+        padding: 15px;
+        color: #fff;
+        font-size: 25px;
+        float: right;
+        margin-top: 40px;
+        border-radius: 50%;
+        background-color: #4071ce;
+    }
+    .container .row.form-contact .col-sm-6.contactInformation h3{
+        font-size: 25px;
+    }
+    .container .row.form-contact .col-sm-6.contactInformation p{
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    .container .row.form-contact .col-sm-6.contactInformation .contact-icon{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin-top: 50px;
+    }
+    .container .row.form-contact .col-sm-6.contactInformation .contact-icon i{
+        padding: 10px 10px;
+        font-size: 30px;
+    }
 
-
+}
 
 
 

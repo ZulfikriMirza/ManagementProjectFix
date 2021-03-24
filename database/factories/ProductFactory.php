@@ -22,15 +22,14 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
-        $product_name = $this->faker->unique()->words($nb=4,$asText=true);
+        $product_name = $this->faker->unique()->words($nb = 4, $asText = true);
         $slug = Str::slug($product_name);
         return [
             'name' => $product_name,
             'slug' => $slug,
-            'harga' => $this->faker->numberBetween(10,500),
-            'image' => 'COV_' . $this->faker->unique()->numberBetween(1,9).'.png',
-            'description' => $this->faker->text(500),
-            'category_id' => $this->faker->numberBetween(1,3)
+            'harga' => $this->faker->numberBetween(10, 500),
+            'image' => 'COV_' . $this->faker->unique()->numberBetween(1, 9) . '.png',
+            'description' => $this->faker->text(500)
         ];
     }
 }
