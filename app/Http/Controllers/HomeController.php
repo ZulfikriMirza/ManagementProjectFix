@@ -7,6 +7,11 @@ use App\Models\AdminHome;
 use App\Models\AdminListJasa;
 use App\Models\AdminProject;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Jasa;
+use App\Models\Cart;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -17,13 +22,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+        
         $adminHome = AdminHome::all();
         $adminProject = AdminProject::all();
         $adminListJasa = AdminListJasa::all();
+        $jasas = Jasa::all();
         return view("Home.index", [
             "adminHome" => $adminHome,
             "adminProject" => $adminProject,
-            "adminListJasa" => $adminListJasa
+            "adminListJasa" => $adminListJasa,
+            "jasas" => $jasas,
         ]);
     }
 
@@ -91,5 +99,34 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addItem($name, $harga)
+    {
+        $id_user = Auth::id();
+        $cart = Cart::create([
+            'user_id' => $id_user,
+            'name' => $name,
+            'harga' => $harga,
+        ]);
+        $cart->save();
+        return back()->with('success', 'Berhasil Menambahkan Jasa ke Keranjang');
+    }
+
+    public function getCart(Request $request)
+    {
+        
+        $carts = auth()->user()->cart;
+        return view('cart.cart', [
+            'carts' => $carts,
+        ]);
+    }
+
+    public function RemoveItem($id)
+    {
+
+        $carts = Cart::find($id);
+        $carts->delete();
+        return back();
     }
 }

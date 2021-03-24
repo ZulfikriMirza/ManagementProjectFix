@@ -51,12 +51,13 @@ Route::get('/contact', [ContactController::class, 'index'])->name("contact");
 
 // Kode buat route kalo pas masuk page nya harus login
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/cart', [ShowcaseController::class, 'getCart'])->name("cart");
-    Route::get('/cart/{id}', [ShowcaseController::class, 'RemoveItem'])->name("remove");
+    Route::get('/cart', [HomeController::class, 'getCart'])->name("cart");
+    Route::get('/cart/{id}', [HomeController::class, 'RemoveItem'])->name("remove");
     Route::get('/checkout', [CheckoutController::class, 'index'])->name("checkout");
     Route::post('/checkout', [FormCheckout::class, 'postCheckout'])->name("CheckoutPost");
-    Route::get('/showcase/{id}', [ShowcaseController::class, 'addItem'])->name("add-item");
     Route::get('/checkout/ajax/{id}', [CheckoutController::class, 'ajax'])->name("getCity");
+    Route::get('/home/update/{name}/{harga}', [HomeController::class, 'addItem'])->name("add-item");
+
 });
 
 

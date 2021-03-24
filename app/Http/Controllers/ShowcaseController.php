@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Jasa;
 use App\Models\Cart;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -21,10 +22,8 @@ class ShowcaseController extends Controller
     public function index()
     {
         $products = Product::all();
-        $users = User::all();
         return view('Showcase.showcase', [
             'products' => $products,
-            'users' => $users
         ]);
     }
 
@@ -94,41 +93,5 @@ class ShowcaseController extends Controller
         //
     }
 
-    public function addItem($id)
-    {
 
-
-        $produk = Product::find($id);
-        $id_user = Auth::id();
-        $cart_name = $produk->name;
-        $cart_harga = $produk->harga;
-        $cart = Cart::create([
-            'user_id' => $id_user,
-            'name' => $cart_name,
-            'harga' => $cart_harga,
-        ]);
-        $cart->save();
-        return back();
-        // jadi urang ngambil id dari product buat nge masukin nama harga ke database cart
-        // $carts = Cart::all();
-        // Cart::add($carts->$product_id, $carts->$name, 1, $carts->$harga);
-        // return view('Showcase.showcase');
-    }
-
-    public function getCart(Request $request)
-    {
-        
-        $carts = auth()->user()->cart;
-        return view('cart.cart', [
-            'carts' => $carts,
-        ]);
-    }
-
-    public function RemoveItem($id)
-    {
-
-        $carts = Cart::find($id);
-        $carts->delete();
-        return back();
-    }
 }
