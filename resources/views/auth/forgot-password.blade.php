@@ -1,11 +1,29 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/forgot.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+  <title>Forget Password</title>
+</head>
+    
+<div class="login-home">
+    <a href="{{ route('home') }}">Home</a>
+  </div>
+<div class="cont">
+
+
+        
+    <div class="cont2">
+    <div class="kunci">
+        <img src="foto/kunci.png">
+    </div>
+    
+        <h2>Forgot Password</h2>
+
+        <x-guest-layout>
+        <div class="isi">
+            {{ __('Melalui alamat email anda, kami dapat mengirimkan link untuk me-reset password anda.') }}
         </div>
 
         @if (session('status'))
@@ -23,12 +41,16 @@
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
-                    {{ __('Email Password Reset Link') }}
+            <div class="btn">
+                <x-jet-button class="submit">
+                    {{ __('Kirimkan Ke Alamat E-mail') }}
                 </x-jet-button>
             </div>
+            <div class="link">
+            <p>Kembali Ke Laman <a href="{{ route('login') }}">Login</a></p>
+            </div>
         </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+    </div>    
+  
+</x-guest-layout>  
+</div>
