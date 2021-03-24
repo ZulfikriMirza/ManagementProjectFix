@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\User;
-use Session;
+use Illuminate\Support\Facades\Auth;
+
 
 class ShowcaseController extends Controller
 {
@@ -96,15 +97,13 @@ class ShowcaseController extends Controller
     public function addItem($id)
     {
 
-        // dd($id, $name);
-        Cart::all();
+
         $produk = Product::find($id);
-        $user = User::find($id);
-        $cart_id = $user['id'];
+        $id_user = Auth::id();
         $cart_name = $produk->name;
         $cart_harga = $produk->harga;
         $cart = Cart::create([
-            'user_id' => $cart_id,
+            'user_id' => $id_user,
             'name' => $cart_name,
             'harga' => $cart_harga,
         ]);
@@ -118,6 +117,7 @@ class ShowcaseController extends Controller
 
     public function getCart(Request $request)
     {
+        
         $carts = auth()->user()->cart;
         return view('cart.cart', [
             'carts' => $carts,
@@ -126,7 +126,7 @@ class ShowcaseController extends Controller
 
     public function RemoveItem($id)
     {
-        Cart::all();
+
         $carts = Cart::find($id);
         $carts->delete();
         return back();

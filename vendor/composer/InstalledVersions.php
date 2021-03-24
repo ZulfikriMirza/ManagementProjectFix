@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '33d8e9e4e5f01999ef6fce3afd35537d296b7a3f',
+    'reference' => 'd07537de98e2755257607d9bc95bb6fde2635b6c',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -500,6 +500,15 @@ private static $installed = array (
       ),
       'reference' => 'daa11c43729510b3700bc34d414664966b03bffe',
     ),
+    'kavist/rajaongkir' => 
+    array (
+      'pretty_version' => 'v1.1.0',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c1ab72000d05b1cb6b0a1a1364d6200b78976377',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -541,7 +550,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '33d8e9e4e5f01999ef6fce3afd35537d296b7a3f',
+      'reference' => 'd07537de98e2755257607d9bc95bb6fde2635b6c',
     ),
     'laravel/sail' => 
     array (

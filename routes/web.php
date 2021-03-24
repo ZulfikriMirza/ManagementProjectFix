@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ShowcaseController;
-use App\Http\Livewire\CartComponent;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AdminHomeController;
@@ -9,7 +8,9 @@ use App\Http\Controllers\AdminShowcaseController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\CheckoutController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\FormCheckout;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,8 +53,10 @@ Route::get('/contact', [ContactController::class, 'index'])->name("contact");
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/cart', [ShowcaseController::class, 'getCart'])->name("cart");
     Route::get('/cart/{id}', [ShowcaseController::class, 'RemoveItem'])->name("remove");
-    Route::get('/checkout', [CheckoutController::class, 'render'])->name("checkout");
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name("checkout");
+    Route::post('/checkout', [FormCheckout::class, 'postCheckout'])->name("CheckoutPost");
     Route::get('/showcase/{id}', [ShowcaseController::class, 'addItem'])->name("add-item");
+    Route::get('/checkout/ajax/{id}', [CheckoutController::class, 'ajax'])->name("getCity");
 });
 
 

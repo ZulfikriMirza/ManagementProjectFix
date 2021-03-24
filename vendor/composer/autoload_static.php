@@ -135,6 +135,10 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
             'Laravel\\Jetstream\\' => 18,
             'Laravel\\Fortify\\' => 16,
         ),
+        'K' => 
+        array (
+            'Kavist\\RajaOngkir\\' => 18,
+        ),
         'J' => 
         array (
             'Jenssegers\\Agent\\' => 17,
@@ -434,6 +438,10 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
         array (
             0 => __DIR__ . '/..' . '/laravel/fortify/src',
         ),
+        'Kavist\\RajaOngkir\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kavist/rajaongkir/src',
+        ),
         'Jenssegers\\Agent\\' => 
         array (
             0 => __DIR__ . '/..' . '/jenssegers/agent/src',
@@ -591,6 +599,7 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
         'App\\Http\\Controllers\\AdminHomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminHomeController.php',
         'App\\Http\\Controllers\\AdminShowcaseController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminShowcaseController.php',
         'App\\Http\\Controllers\\CartController' => __DIR__ . '/../..' . '/app/Http/Controllers/CartController.php',
+        'App\\Http\\Controllers\\CheckoutController' => __DIR__ . '/../..' . '/app/Http/Controllers/CheckoutController.php',
         'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
@@ -608,8 +617,11 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
         'App\\Models\\AdminHome' => __DIR__ . '/../..' . '/app/Models/AdminHome.php',
         'App\\Models\\AdminListJasa' => __DIR__ . '/../..' . '/app/Models/AdminListJasa.php',
         'App\\Models\\AdminProject' => __DIR__ . '/../..' . '/app/Models/AdminProject.php',
+        'App\\Models\\Cart' => __DIR__ . '/../..' . '/app/Models/Cart.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+        'App\\Models\\City' => __DIR__ . '/../..' . '/app/Models/City.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
+        'App\\Models\\Province' => __DIR__ . '/../..' . '/app/Models/Province.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -816,7 +828,9 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
         'Database\\Seeders\\AdminHomeSeeder' => __DIR__ . '/../..' . '/database/seeders/AdminHomeSeeder.php',
         'Database\\Seeders\\AdminListJasaSeeder' => __DIR__ . '/../..' . '/database/seeders/AdminListJasaSeeder.php',
         'Database\\Seeders\\AdminProjectSeeder' => __DIR__ . '/../..' . '/database/seeders/AdminProjectSeeder.php',
+        'Database\\Seeders\\CitySeeder' => __DIR__ . '/../..' . '/database/seeders/CitySeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\ProvinceSeeder' => __DIR__ . '/../..' . '/database/seeders/ProvinceSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -2730,6 +2744,24 @@ class ComposerStaticInit45a1913c7d4d9fa8a185660fae6971ce
         'Jenssegers\\Agent\\AgentServiceProvider' => __DIR__ . '/..' . '/jenssegers/agent/src/AgentServiceProvider.php',
         'Jenssegers\\Agent\\Facades\\Agent' => __DIR__ . '/..' . '/jenssegers/agent/src/Facades/Agent.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Kavist\\RajaOngkir\\Contracts\\HttpClientContract' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Contracts/HttpClientContract.php',
+        'Kavist\\RajaOngkir\\Contracts\\LocationResourceContract' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Contracts/LocationResourceContract.php',
+        'Kavist\\RajaOngkir\\Contracts\\SearchDriverContract' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Contracts/SearchDriverContract.php',
+        'Kavist\\RajaOngkir\\Exceptions\\ApiResponseException' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Exceptions/ApiResponseException.php',
+        'Kavist\\RajaOngkir\\Exceptions\\BasicHttpClientException' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Exceptions/BasicHttpClientException.php',
+        'Kavist\\RajaOngkir\\Exceptions\\InvalidConfigurationException' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Exceptions/InvalidConfigurationException.php',
+        'Kavist\\RajaOngkir\\Facades\\RajaOngkir' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Facades/RajaOngkir.php',
+        'Kavist\\RajaOngkir\\HttpClients\\AbstractClient' => __DIR__ . '/..' . '/kavist/rajaongkir/src/HttpClients/AbstractClient.php',
+        'Kavist\\RajaOngkir\\HttpClients\\BasicClient' => __DIR__ . '/..' . '/kavist/rajaongkir/src/HttpClients/BasicClient.php',
+        'Kavist\\RajaOngkir\\Providers\\LaravelServiceProvider' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Providers/LaravelServiceProvider.php',
+        'Kavist\\RajaOngkir\\RajaOngkir' => __DIR__ . '/..' . '/kavist/rajaongkir/src/RajaOngkir.php',
+        'Kavist\\RajaOngkir\\Resources\\AbstractLocation' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Resources/AbstractLocation.php',
+        'Kavist\\RajaOngkir\\Resources\\AbstractResource' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Resources/AbstractResource.php',
+        'Kavist\\RajaOngkir\\Resources\\Kota' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Resources/Kota.php',
+        'Kavist\\RajaOngkir\\Resources\\OngkosKirim' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Resources/OngkosKirim.php',
+        'Kavist\\RajaOngkir\\Resources\\Provinsi' => __DIR__ . '/..' . '/kavist/rajaongkir/src/Resources/Provinsi.php',
+        'Kavist\\RajaOngkir\\SearchDrivers\\AbstractDriver' => __DIR__ . '/..' . '/kavist/rajaongkir/src/SearchDrivers/AbstractDriver.php',
+        'Kavist\\RajaOngkir\\SearchDrivers\\BasicDriver' => __DIR__ . '/..' . '/kavist/rajaongkir/src/SearchDrivers/BasicDriver.php',
         'Laravel\\Fortify\\Actions\\AttemptToAuthenticate' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/AttemptToAuthenticate.php',
         'Laravel\\Fortify\\Actions\\CompletePasswordReset' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/CompletePasswordReset.php',
         'Laravel\\Fortify\\Actions\\ConfirmPassword' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/ConfirmPassword.php',
