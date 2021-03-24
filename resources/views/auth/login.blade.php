@@ -78,8 +78,8 @@
           <p>If you already has an account, just Log In. We've missed you!</p>
         </div>
         <div class="img-btn">
-          <span class="m-up">Sign Up</span>
-          <span class="m-in">Sign In</span>
+          <span class="m-up">Register</span>
+          <span class="m-in">Log In</span>
         </div>
       </div>
 
@@ -110,6 +110,7 @@
             <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
           </label>
 
+
           <!--@if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-jet-label for="terms">
@@ -126,7 +127,7 @@
                     </x-jet-label>
                 </div>
             @endif-->
-
+            
           <x-jet-button class="submit">
             {{ __('Register') }}
           </x-jet-button>
