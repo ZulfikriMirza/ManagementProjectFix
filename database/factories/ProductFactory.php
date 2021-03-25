@@ -27,9 +27,15 @@ class ProductFactory extends Factory
         return [
             'name' => $product_name,
             'slug' => $slug,
+<<<<<<< Updated upstream
             'harga' => $this->faker->numberBetween(10,500),
             'image' => 'COV_' . $this->faker->unique()->numberBetween(1,9).'.png',
             'description' => $this->faker->text(500),
+=======
+            'harga' => $this->faker->numberBetween(10, 500),
+            'image' => 'COV_' . $this->faker->unique()->numberBetween(1, 9) . '.png',
+            'description' => $this->faker->text(500)
+>>>>>>> Stashed changes
         ];
     }
 }

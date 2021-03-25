@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('harga');
             $table->string('image')->nullable();
             $table->text('description')->nullable();
+            $table->string('category_name');
             $table->timestamps();
         });
     }

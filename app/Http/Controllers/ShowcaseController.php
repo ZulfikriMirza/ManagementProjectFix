@@ -21,7 +21,7 @@ class ShowcaseController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(6);
         return view('Showcase.showcase', [
             'products' => $products,
         ]);
