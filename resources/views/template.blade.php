@@ -22,6 +22,29 @@
 </head>
 
 <body>
+    @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+        <strong>{{ session('success') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @elseif (session('error'))
+    <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+        <strong>{{ session('error') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @elseif($errors->any())
+    <div class="alert alert-danger ">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li> {{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     @yield('content')
 
     <!-- Optional JavaScript -->

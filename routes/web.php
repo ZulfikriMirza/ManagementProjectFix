@@ -45,19 +45,21 @@ Route::get('/aboutus', [AboutUsController::class, 'index'])->name("aboutus");
 
 //------------------Controller Contact------------------//
 Route::get('/contact', [ContactController::class, 'index'])->name("contact");
+Route::post('/contact', [ContactController::class, 'store'])->name("contact.post");
 
 
 //------------------Controller Checkout------------------//
 
 // Kode buat route kalo pas masuk page nya harus login
-Route::group(['middleware' => ['auth', 'verified']], function () {
+Route::group(['middleware' => ['auth', "verified"]], function () {
     Route::get('/cart', [HomeController::class, 'getCart'])->name("cart");
     Route::get('/cart/{id}', [HomeController::class, 'RemoveItem'])->name("remove");
-    Route::get('/checkout', [CheckoutController::class, 'index'])->name("checkout");
-    Route::post('/checkout', [FormCheckout::class, 'postCheckout'])->name("CheckoutPost");
-    Route::get('/checkout/ajax/{id}', [CheckoutController::class, 'ajax'])->name("getCity");
-    Route::get('/home/update/{name}/{harga}', [HomeController::class, 'addItem'])->name("add-item");
 
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name("checkout");
+    Route::get('/checkout/ajax/{id}', [CheckoutController::class, 'ajax'])->name("getCity");
+    Route::post('/checkout', [FormCheckout::class, 'postCheckout'])->name("CheckoutPost");
+
+    Route::get('/home/update/{name}/{harga}', [HomeController::class, 'addItem'])->name("add-item");
 });
 
 

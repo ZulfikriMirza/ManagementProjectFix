@@ -15,20 +15,37 @@
 <div class="container kontak">
   <div class="row no-gutters form-contact">
     <div class="col-sm-6 contactForm">
-      <h5>Reach Us!</h5>
-      <div class="row">
-        <div class="col-sm-6 mt-4">
-          <label for="fullname">Full Name</label><br>
-          <input type="text" id="fullname" placeholder="Your Name...">
+      <form method="post" action="{{ route('contact.post') }}">
+        @csrf
+        <h5>Reach Us!</h5>
+        <div class="row">
+          <div class="col-sm-6 mt-4">
+            <label for="fullname">Full Name</label><br>
+            <input type="text" id="fullname" placeholder="Your Name..." name="contactName">
+          </div>
+          <div class="col-sm-6 mt-4">
+            <label for="email">Email</label><br>
+            @auth
+            <input type="email" id="email" value="{{ Auth::user()->email }}" name="contactEmail" readonly>
+            @endauth
+            @guest
+            <input type="email" id="email" placeholder="Your Email..." name="contactEmail">
+            @endguest
+          </div>
         </div>
-        <div class="col-sm-6 mt-4">
-          <label for="fullname">Email</label><br>
-          <input type="email" id="fullname" placeholder="Your Email...">
-        </div>
-      </div>
-      <label class="mt-4" for="message">Message</label><br>
-      <textarea id="message"></textarea>
-      <i class="fas fa-paper-plane"></i>
+        <label class="mt-4" for="message">Message</label><br>
+        <textarea id="message" name="contactComment"></textarea>
+        @auth
+        @if(Auth::user()->level == 'admin')
+        <span>Admin Can't Comment</span>
+        @else
+        <button type="submit" class="fas fa-paper-plane"></button>
+        @endif
+        @endauth
+        @guest
+        <button type="submit" class="fas fa-paper-plane"></button>
+        @endguest
+      </form>
     </div>
     <div class="col-sm-6 contactInformation">
       <h3>Contact Information</h3>

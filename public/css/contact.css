@@ -31,7 +31,7 @@ h5{
     text-transform: uppercase;
 }
 
-label{
+label,span{
     font-family: 'Exo', sans-serif;
     font-weight: 400;
     color: rgb(156, 156, 156);
@@ -85,7 +85,8 @@ object{
     outline: none;
 }
 
-.container .row.form-contact .col-sm-6.contactForm i{
+.container .row.form-contact .col-sm-6.contactForm button{
+    border: none;
     cursor: pointer;
     padding: 10px;
     color: #fff;
@@ -97,8 +98,13 @@ object{
     transform: scale(1);
     transition: 0.1s linear;
 }
-.container .row.form-contact .col-sm-6.contactForm i:hover{
+.container .row.form-contact .col-sm-6.contactForm button:hover{
     transform: scale(0.92);
+}
+.container .row.form-contact .col-sm-6.contactForm span{
+    color: red;
+    float: right;
+    margin-top: 40px;
 }
 
 .container .row.form-contact .col-sm-6.contactInformation h3{

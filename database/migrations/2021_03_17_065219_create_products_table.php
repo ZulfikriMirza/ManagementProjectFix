@@ -21,10 +21,6 @@ class CreateProductsTable extends Migration
             $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         });
     }
 
