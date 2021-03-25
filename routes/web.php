@@ -10,7 +10,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\FormCheckout;
-
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,8 @@ use App\Http\Controllers\FormCheckout;
 */
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    $order = Order::where('user_id', Auth::user()->id)->get();
+    return view('dashboard', ["order" => $order, "len" => count($order)]);
 })->name('dashboard');
 
 //------------------Controller HOME------------------//

@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Additional CSS -->
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }} " type="text/css">
     @yield('css')
 </head>
 
@@ -47,7 +48,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dashboard') }}">
                                 <i class="ni ni-tv-2 text-white"></i>
-                                <span class="nav-link-text">Dashboard</span>
+                                <span class="nav-link-text">Pemesanan</span>
                             </a>
                         </li>
                         <li class="nav-item">

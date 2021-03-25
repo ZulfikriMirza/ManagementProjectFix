@@ -26,7 +26,8 @@ class CreateCheckoutTable extends Migration
             $table->string('kode_pos')->nullable();
             $table->integer('budget')->nullable();
             $table->text('note')->nullable();
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('status')->default(False);
             $table->timestamps();
         });

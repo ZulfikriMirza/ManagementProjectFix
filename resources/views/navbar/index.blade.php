@@ -28,7 +28,7 @@
             <div class="dropdown-menu dropdown-menu-right">
                 <p class="dropdown-header">Manage Account</p>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                <a class="dropdown-item" href="{{ route('dashboard') }}">Pemesanan</a>
                 <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -53,7 +53,6 @@
             <p><a href="{{ route('aboutus') }}"><span></span>About Us<span></span></a></p>
             <p><a href="{{ route('showcase') }}"><span></span>Showcase<span></span></a></p>
             <p><a href="{{ route('contact') }}"><span></span>Contact<span></span></a></p>
-            <p><a href="{{ route('checkout') }}"><span></span>Checkout<span></span></a></p>
             @guest
             <h4><a href="{{ route('login') }}">LOGIN</a> | <a href="{{ route('register') }}">REGISTER</a></h4>
             @endguest
@@ -67,7 +66,7 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <h6 class="dropdown-header">Manage Account</h6>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                    <a class="dropdown-item" href="{{ route('dashboard') }}">Pemesanan</a>
                     <a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

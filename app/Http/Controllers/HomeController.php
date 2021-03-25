@@ -22,7 +22,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
+
         $adminHome = AdminHome::all();
         $adminProject = AdminProject::all();
         $adminListJasa = AdminListJasa::all();
@@ -115,7 +115,6 @@ class HomeController extends Controller
 
     public function getCart(Request $request)
     {
-        
         $carts = auth()->user()->cart;
         return view('cart.cart', [
             'carts' => $carts,

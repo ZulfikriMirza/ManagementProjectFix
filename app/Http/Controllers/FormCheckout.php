@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use App\Models\City;
-use App\Models\Province;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 
@@ -43,9 +40,9 @@ class FormCheckout extends Controller
             'budget' => $request->harga,
             'note' => $request->catatan,
         ]);
-            // fungsi dibawah belum jalan satupun
+        // fungsi dibawah belum jalan satupun
         $order->save();
 
-        return view('profile.show')->with('success','Berhasil Melakukan Pemesanan Produk');
+        return redirect()->route('dashboard')->with('success', 'Berhasil Melakukan Pemesanan Produk');
     }
 }
