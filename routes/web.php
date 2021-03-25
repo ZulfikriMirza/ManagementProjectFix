@@ -51,7 +51,11 @@ Route::post('/contact', [ContactController::class, 'store'])->name("contact.post
 //------------------Controller Checkout------------------//
 
 // Kode buat route kalo pas masuk page nya harus login
+<<<<<<< Updated upstream
 Route::group(['middleware' => ['auth', "verified"]], function () {
+=======
+Route::group(['middleware' => ['auth']], function () {
+>>>>>>> Stashed changes
     Route::get('/cart', [HomeController::class, 'getCart'])->name("cart");
     Route::get('/cart/{id}', [HomeController::class, 'RemoveItem'])->name("remove");
 

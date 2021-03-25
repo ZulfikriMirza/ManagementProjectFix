@@ -18,6 +18,9 @@
         </div>
         @endforeach
     </div>
+    {{ $products->links() }}
 </div>
+
+
 
 @include('Home.footer')
