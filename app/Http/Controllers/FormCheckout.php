@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Cart;
 
 class FormCheckout extends Controller
 {
@@ -42,7 +43,8 @@ class FormCheckout extends Controller
         ]);
         // fungsi dibawah belum jalan satupun
         $order->save();
-
+        $cart = Cart::find($id_user);
+        $cart->delete();
         return redirect()->route('dashboard')->with('success', 'Berhasil Melakukan Pemesanan Produk');
     }
 }
