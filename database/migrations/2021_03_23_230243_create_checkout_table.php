@@ -27,9 +27,12 @@ class CreateCheckoutTable extends Migration
             $table->integer('budget')->nullable();
             $table->text('note')->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('user_name')->nullable();
             $table->boolean('status')->default(False);
+            $table->boolean('done')->default(False);
+            $table->string('comment')->nullable();
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

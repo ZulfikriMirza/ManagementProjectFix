@@ -7,11 +7,55 @@
     </div>
     <div class="navbars-rights">
         <div class="btn-group mr-5">
+            @auth
+            @if(count(auth()->user()->cart) > 0)
+            <i type="button" class="fas fa-shopping-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>{{ count(auth()->user()->cart) }}</span></i>
+            @else
             <i type="button" class="fas fa-shopping-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+            @endif
+            @endauth
+            @guest
+            <i type="button" class="fas fa-shopping-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+            @endguest
             <div class="dropdown-menu dropdown-menu-right cart-item text-center">
+                @auth
+                @if(auth()->user()->cart)
+                <div class="table-responsive-sm">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Produk Name</th>
+                                <th scope="col">Estimasi Harga(Rp)</th>
+                            </tr>
+                        </thead>
+                        <!-- {{$number=1}} jgn dihapus-->
+                        @foreach(auth()->user()->cart as $cart)
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{$number++}}</th>
+                                <td>{{$cart->name}}</td>
+                                <td>{{ number_format($cart['harga'],0,",",".")}}</td>
+                                <td>
+                                    <a href="{{route('remove',['id'=>$cart->id])}}"> <i class="far fa-trash-alt"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        @endforeach
+                    </table>
+                </div>
+                <p><a href="{{ route('cart') }}">cart</a></p>
+                @else
                 <p class="mt-2">Yet! Cart is empty!</p>
                 <img src="{{ asset('Home/Materials/3298067.jpg')}}">
                 <p><a href="{{ route('cart') }}">cart</a></p>
+                @endif
+                @endauth
+                @guest
+                <p class="mt-2">Yet! Cart is empty!</p>
+                <img src="{{ asset('Home/Materials/3298067.jpg')}}">
+                <p><a href="{{ route('cart') }}">cart</a></p>
+                @endguest
             </div>
         </div>
         @guest
@@ -81,11 +125,55 @@
         </div>
         <div class="col-5 ham-right">
             <div class="btn-group">
+                @auth
+                @if(count(auth()->user()->cart) > 0)
+                <i type="button" class="fas fa-shopping-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>{{ count(auth()->user()->cart) }}</span></i>
+                @endauth
+                @else
                 <i type="button" class="fas fa-shopping-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                @endif
+                @guest
+                <i type="button" class="fas fa-shopping-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                @endguest
                 <div class="dropdown-menu dropdown-menu-right cart-item text-center">
+                    @auth
+                    @if(auth()->user()->cart)
+                    <div class="table-responsive-sm">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Produk Name</th>
+                                    <th scope="col">Estimasi Harga(Rp)</th>
+                                </tr>
+                            </thead>
+                            <!-- {{$number=1}} jgn dihapus-->
+                            @foreach(auth()->user()->cart as $cart)
+                            <tbody>
+                                <tr>
+                                    <th scope="row">{{$number++}}</th>
+                                    <td>{{$cart->name}}</td>
+                                    <td>{{ number_format($cart['harga'],0,",",".")}}</td>
+                                    <td>
+                                        <a href="{{route('remove',['id'=>$cart->id])}}"> <i class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            @endforeach
+                        </table>
+                    </div>
+                    <p><a href="{{ route('cart') }}">cart</a></p>
+                    @else
                     <p class="mt-2">Yet! Cart is empty!</p>
                     <img src="{{ asset('Home/Materials/3298067.jpg')}}">
                     <p><a href="{{ route('cart') }}">cart</a></p>
+                    @endif
+                    @endauth
+                    @guest
+                    <p class="mt-2">Yet! Cart is empty!</p>
+                    <img src="{{ asset('Home/Materials/3298067.jpg')}}">
+                    <p><a href="{{ route('cart') }}">cart</a></p>
+                    @endguest
                 </div>
             </div>
         </div>

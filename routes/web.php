@@ -9,9 +9,8 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormCheckout;
-use App\Models\Order;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +23,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $order = Order::where('user_id', Auth::user()->id)->get();
-    return view('dashboard', ["order" => $order, "len" => count($order)]);
-})->name('dashboard');
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/dashboard/{id}', [DashboardController::class, 'update'])->name('dashboard.update');
+    Route::get('/dashboard/finished/{id}', [DashboardController::class, 'edit'])->name('dashboard.finish');
+    Route::get('/dashboard/{id}', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
+});
+
 
 //------------------Controller HOME------------------//
 Route::get('/', [HomeController::class, 'index'])->name("home");
@@ -53,11 +55,7 @@ Route::post('/contact', [ContactController::class, 'store'])->name("contact.post
 //------------------Controller Checkout------------------//
 
 // Kode buat route kalo pas masuk page nya harus login
-<<<<<<< Updated upstream
 Route::group(['middleware' => ['auth', "verified"]], function () {
-=======
-Route::group(['middleware' => ['auth']], function () {
->>>>>>> Stashed changes
     Route::get('/cart', [HomeController::class, 'getCart'])->name("cart");
     Route::get('/cart/{id}', [HomeController::class, 'RemoveItem'])->name("remove");
 

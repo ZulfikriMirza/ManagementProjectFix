@@ -3,17 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\AdminHome;
-use App\Models\AdminListJasa;
-use App\Models\AdminProject;
+use App\Models\Order;
 use Illuminate\Http\Request;
-use App\Models\Product;
-use App\Models\Jasa;
-use App\Models\Cart;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,12 +16,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view("Home.index", [
-            "adminHome" => AdminHome::all(),
-            "adminProject" => AdminProject::all(),
-            "adminListJasa" => AdminListJasa::all(),
-            "jasas" => Jasa::all(),
-        ]);
+        if (Auth::user()->level == 'user') {
+            $order = Order::where('user_id', Auth::user()->id)->get();
+        } else {
+            $order = Order::orderBy('user_id')->get();
+        }
+        return view('dashboard', ["order" => $order, "len" => count($order)]);
     }
 
     /**
@@ -70,7 +64,10 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order_finished = Order::find($id);
+        $order_finished->done = 1;
+        $order_finished->save();
+        return back()->with('success', 'Order is done! You can delete this order, thank you for your order!');
     }
 
     /**
@@ -82,7 +79,14 @@ class HomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->comment) {
+            $order_confirmation = Order::find($id);
+            $order_confirmation->comment = $request->comment;
+            $order_confirmation->status = True;
+            $order_confirmation->save();
+            return back()->with('success', 'Order is Confirmed!');
+        }
+        return back()->with('error', 'Comment must be filled!');
     }
 
     /**
@@ -93,34 +97,7 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
-
-    public function addItem($name, $harga)
-    {
-        $id_user = Auth::id();
-        $cart = Cart::create([
-            'user_id' => $id_user,
-            'name' => $name,
-            'harga' => $harga,
-        ]);
-        $cart->save();
-        return back()->with('success', 'Berhasil Menambahkan Jasa ke Keranjang');
-    }
-
-    public function getCart(Request $request)
-    {
-        $carts = auth()->user()->cart;
-        return view('cart.cart', [
-            'carts' => $carts,
-        ]);
-    }
-
-    public function RemoveItem($id)
-    {
-
-        $carts = Cart::find($id);
-        $carts->delete();
-        return back();
+        Order::where('id', $id)->delete();
+        return back()->with('success', "You're succesfully delete the order!");
     }
 }

@@ -7,13 +7,12 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
+use App\Models\User;
 
 class FormCheckout extends Controller
 {
     public function postCheckout(Request $request)
     {
-
-        $id_user = Auth::id();
         $validated = $request->validate([
             'name_depan' => 'required',
             'name_belakang' => 'required',
@@ -28,7 +27,6 @@ class FormCheckout extends Controller
             'catatan' => 'required',
         ]);
         $order = Order::create([
-            'user_id' => $id_user,
             'name_depan' => $request->name_depan,
             'name_belakang' => $request->name_belakang,
             'email' => $request->email,
@@ -40,11 +38,14 @@ class FormCheckout extends Controller
             'kode_pos' => $request->posKode,
             'budget' => $request->harga,
             'note' => $request->catatan,
+            'user_id' => Auth::user()->id,
+            'user_name' => Auth::user()->name,
         ]);
         // fungsi dibawah belum jalan satupun
         $order->save();
-        $cart = Cart::find($id_user);
-        $cart->delete();
+
+        $cart = Cart::where("user_id", Auth::user()->id)->delete();
+
         return redirect()->route('dashboard')->with('success', 'Berhasil Melakukan Pemesanan Produk');
     }
 }

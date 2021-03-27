@@ -29,7 +29,8 @@ class ProductFactory extends Factory
             'slug' => $slug,
             'harga' => $this->faker->numberBetween(10, 500),
             'image' => 'COV_' . $this->faker->unique()->numberBetween(1, 9) . '.png',
-            'description' => $this->faker->text(500)
+            'description' => $this->faker->text(500),
+            'category_name' => $this->faker->numberBetween(1, 3),
         ];
     }
 }

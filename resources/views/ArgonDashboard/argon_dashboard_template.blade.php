@@ -104,7 +104,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dashboard') }}">
                                 <i class="ni ni-tv-2 text-white"></i>
-                                <span class="nav-link-text">Dashboard</span>
+                                <span class="nav-link-text">Pemesanan</span>
                             </a>
                         </li>
                         <li class="nav-item">

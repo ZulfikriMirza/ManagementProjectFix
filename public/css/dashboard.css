@@ -5,7 +5,7 @@
     margin: 0;
 }
 
-.container.order{
+.container.order,.container.adminOrder{
     font-family: "Exo",sans-serif;
     margin-top: 50px;
     width: 90%;
@@ -14,13 +14,12 @@
     justify-content: center;
     align-items: center;
     padding: 30px;
-    background-color: white;
     -webkit-box-shadow: 0px 0px 29px 0px rgba(0,0,0,0.52);
     -moz-box-shadow: 0px 0px 29px 0px rgba(0,0,0,0.52);
     box-shadow: 0px 0px 29px 0px rgba(0,0,0,0.52);
 }
 
-.container.order img{
+.container.order img,.container.adminOrder img{
     width: 300px;
     height: 300px;
     object-fit: cover;
@@ -36,6 +35,47 @@
     color: white;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+.container.order td > a{
+    background-color: #2DCE89;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 12px;
+}
+
+.container.order table,.container.adminOrder table{
+    padding: 10px 0;
+}
+
+.container.comment{
+    color: black;
+    padding: 0px;
+    margin-bottom: 30px;
+}
+
+.container.comment h4{
+    background-color: #4071ce;
+    padding: 10px 20px;
+    color: white;
+}
+.container.comment p{
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-weight: 400;
+}
+
+.completed{
+    padding: 10px 0px;
+}
+.completed p > a{
+    text-align: right;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(248, 50, 50) !important;
+    background-color: transparent !important;
+    padding: 0px !important;
+    text-transform: uppercase;
 }
 
 @media (max-width: 767.98px) {

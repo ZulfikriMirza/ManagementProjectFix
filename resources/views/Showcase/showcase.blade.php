@@ -4,7 +4,6 @@
 
 @include('navbar.index')
 
-
 <div class="container project-items mt-4 mb-5">
     <div class="row justify-content-center">
         @foreach ($products as $product)
