@@ -9,10 +9,8 @@
   <title>Arsitek - Login / Register</title>
 </head>
 
+
 <body>
-
-
-
   @if (session('status'))
   <div class="mb-4s font-medium text-sm text-green-600">
     {{ session('status') }}
@@ -22,6 +20,9 @@
     <a href="{{ route('home') }}">Home</a>
   </div>
   <div class="cont">
+    <div class="validation">
+    <x-jet-validation-errors/>
+    </div>
     <div class="form sign-in">
       <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -71,72 +72,16 @@
       <div class="img">
         <div class="img-text m-up">
           <h2>New here?</h2>
-          <p>Register and discover great amount of new opportunities!</p>
+          <p>Register and discover our works and creations!</p>
         </div>
-        <div class="img-text m-in">
-          <h2>One of us?</h2>
-          <p>If you already has an account, just Log In. We've missed you!</p>
-        </div>
+        <a href="{{ route('register') }}" style="text-decoration: none; color: white;">
         <div class="img-btn">
-          <span class="m-up">Register</span>
-          <span class="m-in">Log In</span>
+          <span class="m-up"> Register</span>
         </div>
+        </a>
       </div>
-
-
 
       <!--####################################################-->
-      <div class="form sign-up">
-        <form method="POST" action="{{ route('register') }}">
-          @csrf
-          <h2>Sign Up</h2>
-          <label>
-            <span>Name</span>
-            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-          </label>
-
-          <label>
-            <span>Email</span>
-            <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-          </label>
-
-          <label>
-            <span>Password</span>
-            <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-          </label>
-
-          <label>
-            <span>Confirm Password</span>
-            <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-          </label>
-
-
-          <!--@if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-jet-label for="terms">
-                        <div class="flex items-center">
-                            <x-jet-checkbox name="terms" id="terms"/>
-
-                            <div class="ml-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                ]) !!}
-                            </div>
-                        </div>
-                    </x-jet-label>
-                </div>
-            @endif-->
-            
-          <x-jet-button class="submit">
-            {{ __('Register') }}
-          </x-jet-button>
-        </form>
-      </div>
-    </div>
-  </div>
-  <script src="{{ asset('js/login.js') }}"></script>
-
 </body>
 
 </html>

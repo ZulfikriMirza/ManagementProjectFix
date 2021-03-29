@@ -84,19 +84,6 @@ input, button{
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
-
-.validation{
-  font-size: 12px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 22.7%;
-  bottom: 5%;
-  font-style: italic;
-}
-
-
 .login-home a{
   font-size: 14px;
   display: flex;
@@ -188,6 +175,18 @@ button{
   cursor: pointer;
 }
 
+
+.validation{
+  font-size: 12px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 22.7%;
+  bottom: 5%;
+  font-style: italic;
+}
+
 .submit{
   margin-top: 30px;
   margin-bottom: 30px;
@@ -201,14 +200,6 @@ button{
   background: -webkit-linear-gradient(left, #b224ef, #7579ff);
 }
 
-.forgot-pass{
-  margin-top: 15px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  color: #0c0101;
-  cursor: pointer;
-}
 .block mt-4{
   margin-top: 15px;
   text-align: center;
@@ -291,8 +282,7 @@ button{
   height: 100%;
   background: url('../foto/MAS_PA2B_3 .png');
   background-size: cover;
-  transition: -webkit-transform 1.2s ease-in-out;
-  transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
+  
 }
 
 .img:after{
@@ -408,28 +398,4 @@ button{
   transition: transform 1.2s, -webkit-transform 1.2s;;
 }
 
-.img-btn span.m-in{
-  -webkit-transform:translateY(-72px);
-          transform:translateY(-72px);
-}
-
-.cont.s-signup .img-btn span.m-in{
-  -webkit-transform:translateY(0);
-          transform:translateY(0);
-}
-
-.cont.s-signup .img-btn span.m-up{
-  -webkit-transform:translateY(72px);
-          transform:translateY(72px);
-}
-
-.sign-up{
-  -webkit-transform:translate3d(-900px, 0, 0);
-          transform:translate3d(-900px, 0, 0);
-}
-
-.cont.s-signup .sign-up{
-  -webkit-transform:translate3d(0, 0, 0);
-          transform:translate3d(0, 0, 0);
-}
 
