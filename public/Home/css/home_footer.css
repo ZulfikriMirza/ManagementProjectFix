@@ -57,6 +57,12 @@ footer .footer-icon-section i{
     cursor: pointer;
 }
 
+footer .credit a{
+    font-size: 10px;
+    padding-top: 2px;
+
+}
+
 hr{
     margin: 40px auto 20px auto;
     width: 95%;

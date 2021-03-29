@@ -33,3 +33,30 @@ h1{
     -moz-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
     box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
 }
+
+.container.showcase .category{
+    display: flex;
+    align-items: center;
+}
+.container.showcase .category ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.container.showcase .category ul a{
+    color: black;
+    cursor: pointer;
+    margin-right: 20px;
+    padding: 10px 30px;
+    -webkit-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    box-shadow: 11px 9px 19px 0px rgba(0,0,0,0.16);
+    transition: 0.2s ease-in-out;
+    
+}
+.container.showcase .category ul a:hover,
+.container.showcase .category a.active{
+    background-color: #5E72E4;
+    color: white;
+   
+}

@@ -64,9 +64,17 @@
     <div class="category pr-5 pl-5">
         <h4 class="mr-5">Category : </h4>
         <ul>
+            @if($all)
             <a class="active" href="{{ route('admin.showcase') }}">all</a>
+            @else
+            <a href="{{ route('admin.showcase') }}">all</a>
+            @endif
             @foreach($unique_value as $item)
+            @if($cat == $item)
+            <a class="active" href="{{ route('admin.showcase.cat',['cat'=>$item]) }}">{{ $item }}</a>
+            @else
             <a href="{{ route('admin.showcase.cat',['cat'=>$item]) }}">{{ $item }}</a>
+            @endif
             @endforeach
         </ul>
     </div>
@@ -113,12 +121,6 @@
             </div>
         </form>
         @endforeach
-    </div>
-</div>
-
-<div class="row justify-content-center mt-5">
-    <div class="col-md-auto">
-        {!! $products->links() !!}
     </div>
 </div>
 @endsection

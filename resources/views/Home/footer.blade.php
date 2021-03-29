@@ -23,6 +23,13 @@
                          <i class="fab fa-instagram"></i>
                          <i class="fab fa-twitter"></i>
                      </div>
+                     <div class="credit mt-3">
+                         <h2>Credit :</h2>
+                         <a href="http://www.freepik.com">Designed by stories / Freepik</a>
+                         <a href="http://www.freepik.com">Designed by Freepik</a>
+                         <a href="http://www.freepik.com">Designed by slidesgo / Freepik</a>
+                         <a href="http://www.freepik.com">Designed by slidesgo / Freepik</a>
+                     </div>
                  </div>
              </div>
              <hr>

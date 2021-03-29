@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -18,9 +17,42 @@ class AdminShowcaseController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(5);
+        $products = Product::orderBy('category_name')->paginate(5);
+        // dd(Product::orderBy('category_name'));
+        $allProduct = Product::all();
+        $unique = [];
+        foreach ($allProduct as $item) {
+            array_push($unique, intval($item->category_name));
+        }
+        asort($unique);
+        $unique_value = array_unique($unique);
+        return view(
+            'admin.adminShowcase',
+            [
+                'products' => $products, 'unique_value' => $unique_value,
+                'all' => True, 'cat' => False
+            ]
+        );
+    }
 
-        return view('admin.adminShowcase', compact('products'));
+
+    public function select_category($cat)
+    {
+        $products = Product::where('category_name', $cat)->get();
+        $allProduct = Product::all();
+        $unique = [];
+        foreach ($allProduct as $item) {
+            array_push($unique, intval($item->category_name));
+        }
+        asort($unique);
+        $unique_value = array_unique($unique);
+        return view(
+            'admin.adminShowcase2',
+            [
+                'products' => $products, 'unique_value' => $unique_value,
+                'all' => False, 'cat' => $cat
+            ]
+        );
     }
 
     /**
@@ -45,7 +77,8 @@ class AdminShowcaseController extends Controller
             'insertName' => 'required',
             'insertHarga' => 'required',
             'insertDescription' => 'required',
-            'insertFile' => 'required|mimes:jpg,png,jpeg|max:10240'
+            'insertFile' => 'required|mimes:jpg,png,jpeg|max:10240',
+            'insertCategory' => 'required',
         ]);
 
         $name = $request->insertName;
@@ -60,7 +93,7 @@ class AdminShowcaseController extends Controller
             'slug' => $slug,
             'harga' => $request->insertHarga,
             'description' => $request->insertDescription,
-            'category_id' => $request->insertCategory,
+            'category_name' => $request->insertCategory,
             'image' => $filename
         ]);
         $product->save();
@@ -111,11 +144,13 @@ class AdminShowcaseController extends Controller
                 $newSlugProduct = $request['slugProduct' . $product->id];
                 $newDescriptionProduct = $request['descriptionProduct' . $product->id];
                 $newFileProduct = $request['fileProduct' . $product->id];
+                $newCategoryProduct = $request['categoryProduct' . $product->id];
 
                 if (($newNameProduct != null) ||
                     ($newSlugProduct != null) ||
                     ($newDescriptionProduct != null) ||
-                    ($newFileProduct != null)
+                    ($newFileProduct != null) ||
+                    ($newCategoryProduct != null)
                 ) {
                     if ($newSlugProduct) {
                         if (!str_contains($newSlugProduct, "-")) {
@@ -128,14 +163,15 @@ class AdminShowcaseController extends Controller
                         $new_slug = ($newSlugProduct) ? $newSlugProduct : join("-", explode(" ", $newNameProduct));
                     }
                     $new_description = ($newDescriptionProduct) ? $newDescriptionProduct : $product->description;
+                    $new_category = ($newCategoryProduct) ? $newCategoryProduct : $product->category_name;
                     $update_home = Product::find($product->id);
                     $update_home->name = $new_name;
                     $update_home->slug = $new_slug;
+                    $update_home->category_name = $new_category;
                     $update_home->description = $new_description;
                     $update_home->save();
 
                     if ($newFileProduct != null) {
-                        // dd($newFileProduct);
                         $request->validate([
                             'fileProduct' . $id => 'mimes:jpg,png,jpeg|max:10240'
                         ]);

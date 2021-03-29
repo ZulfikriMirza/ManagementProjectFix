@@ -7,10 +7,8 @@ use App\Models\AdminHome;
 use App\Models\AdminListJasa;
 use App\Models\AdminProject;
 use Illuminate\Http\Request;
-use App\Models\Product;
 use App\Models\Jasa;
 use App\Models\Cart;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller

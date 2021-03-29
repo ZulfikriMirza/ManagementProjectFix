@@ -247,6 +247,7 @@
     <script src="{{ asset('Argon_Dashboard/vendor/chart.js/dist/Chart.extension.js') }} "></script>
     <!-- Argon JS -->
     <script src="{{ asset('Argon_Dashboard/js/argon.js?v=1.2.0') }} "></script>
+
 </body>
 
 </html>

@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
-use App\Models\User;
 
 class FormCheckout extends Controller
 {
