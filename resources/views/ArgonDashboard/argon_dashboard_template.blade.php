@@ -72,12 +72,6 @@
                                 <span class="nav-link-text">Edit Showcase</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact') }}">
-                                <i class="ni ni-settings text-white"></i>
-                                <span class="nav-link-text">Edit About Us</span>
-                            </a>
-                        </li>
 
                         <!-- Divider -->
                         <hr class="my-3 bg-white">
