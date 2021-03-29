@@ -10,7 +10,7 @@ body {
 }
 
 
-p {
+.container.showcase .card p {
     font-family: "Exo", sans-serif;
     font-weight: 600;
     font-size: 14px;
