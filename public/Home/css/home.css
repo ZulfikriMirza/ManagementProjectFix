@@ -34,6 +34,19 @@ h1,h2,h3,h4{
     z-index: 9 !important;
 }
 
+.mainSection .icon-section a:nth-child(1):hover i{
+    color: #026bb1;
+}
+.mainSection .icon-section a:nth-child(2):hover i{
+    color: #2764AC;
+}
+.mainSection .icon-section a:nth-child(3):hover i{
+    color: #D30341;
+}
+.mainSection .icon-section a:nth-child(4):hover i{
+    color: #1DA1F2;
+}
+
 /* ==========================
     MAIN IMAGE SECTION
   ===========================*/
@@ -77,6 +90,7 @@ h1,h2,h3,h4{
     color: #e4e4e4;
     padding: 0px 10px 0px 0px;
     font-size: 20px;
+    transition: 0.2s linear;
 }
 
 /* ==========================
@@ -166,6 +180,7 @@ h1,h2,h3,h4{
     color: white;
     transition: 0.3s ease-in-out;
 }
+
 .mainSection .rightSection .controller i:hover{
     transform: scale(1.2);
 }

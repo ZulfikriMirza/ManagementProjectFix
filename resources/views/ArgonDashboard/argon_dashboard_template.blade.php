@@ -57,7 +57,6 @@
                                 <span class="nav-link-text">Profile</span>
                             </a>
                         </li>
-
                         <!-- Divider -->
                         <hr class="my-3 bg-white">
 
@@ -113,13 +112,6 @@
                                 <span class="nav-link-text">Profile</span>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">
-                                <i class=" ni ni-bullet-list-67 text-white"></i>
-                                <span class="nav-link-text">Tables</span>
-                            </a>
-                        </li>
-
                         <!-- Divider -->
                         <hr class="my-3 bg-white">
 
@@ -130,13 +122,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('showcase') }}">
+                            <a class="nav-link" href="{{ route('contact') }}">
                                 <i class="ni ni-badge text-white"></i>
                                 <span class="nav-link-text">Contact</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact') }}">
+                            <a class="nav-link" href="{{ route('showcase') }}">
                                 <i class="ni ni-send text-white"></i>
                                 <span class="nav-link-text">Showcase</span>
                             </a>

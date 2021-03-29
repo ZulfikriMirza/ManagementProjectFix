@@ -6,10 +6,10 @@
 <div class="row mainSection no-gutters">
     <div class="col-md-7 col-lg-8 leftSection">
         <div class="icon-section">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
+            <a href="https://www.facebook.com/mahesa.a.negara" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/mahesanegara/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/AJMBSF" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
     </div>
     <div class="col-md-5 col-lg-4 rightSection">

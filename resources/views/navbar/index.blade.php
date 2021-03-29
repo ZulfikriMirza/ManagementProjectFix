@@ -19,7 +19,7 @@
             @endguest
             <div class="dropdown-menu dropdown-menu-right cart-item text-center">
                 @auth
-                @if(auth()->user()->cart)
+                @if(count(auth()->user()->cart) > 0)
                 <div class="table-responsive-sm">
                     <table class="table table-hover">
                         <thead>
