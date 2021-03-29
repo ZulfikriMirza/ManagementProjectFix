@@ -101,16 +101,7 @@
     font-family: 'Nunito', sans-serif; 
   }
   
-  button{
-    display: block;
-    margin: 0 auto;
-    width: 260px;
-    height: 36px;
-    border-radius: 30px;
-    color: #fff;
-    font-size: 15px;
-    cursor: pointer;
-  }
+  
   
   .submit{
     margin-top: 40px;
@@ -119,6 +110,7 @@
     font-weight: 600;
     font-family: 'Nunito', sans-serif;
     background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+    left:15px;
   }
   
   .submit:hover{
@@ -349,7 +341,7 @@
   }
 
   .btn{
-    margin-top: 5px;
+    margin-top: 15px;
     position: relative;
     left:28%;
     right:20%;
@@ -401,4 +393,12 @@
     text-decoration: underline;
   }
 
+  .notif{
+    position: absolute;
+    color: rgb(68, 197, 68);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    left:24%;
+  }
   
