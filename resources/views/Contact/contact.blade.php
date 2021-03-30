@@ -53,10 +53,9 @@
       <p><i class="fas fa-phone-square-alt mr-3"></i>+62 896-6331-9099</p>
       <p><i class="fas fa-map-marker-alt mr-3"></i>Largo di Torre Argentina 00186 Roma, Italy</p>
       <div class="contact-icon">
-        <a href="https://www.facebook.com/mahesa.a.negara" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/mahesanegara/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/AJMBSF" target="_blank"><i class="fab fa-twitter"></i></a>
+        @foreach($adminlinks as $item)
+        <a href="{{ $item->link }}" target="_blank"><i class="{{ $item->class }}"></i></a>
+        @endforeach
       </div>
     </div>
   </div>

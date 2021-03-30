@@ -73,7 +73,7 @@
     @include('Home.project')
     @include('Home.gallery')
     @include('Home.chooseUs')
-    @include('Home.listjasa')
+    @include('Home.listJasa')
     @include('Home.testimony')
     @include('Home.footer')
 

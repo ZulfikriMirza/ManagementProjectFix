@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+use App\Models\adminLinks;
 use App\Models\City;
 use App\Models\Province;
 use App\Models\Order;
@@ -19,6 +18,7 @@ class CheckoutController extends Controller
         return view("Checkout.checkout", [
             "provinsi" => $province,
             "order" => $order,
+            'adminlinks' => adminLinks::all(),
         ]);
     }
 
@@ -28,7 +28,4 @@ class CheckoutController extends Controller
 
         return json_encode($cities);
     }
-
-
-
 }

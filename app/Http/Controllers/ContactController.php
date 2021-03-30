@@ -6,13 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserComment;
+use App\Models\adminLinks;
 use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        return view("Contact.contact");
+        return view("Contact.contact", [
+            'adminlinks' => adminLinks::all(),
+        ]);
     }
 
     /**
