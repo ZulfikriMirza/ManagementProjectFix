@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\AdminHome;
+use App\Models\adminLinks;
 use App\Models\AdminListJasa;
 use App\Models\AdminProject;
 use Illuminate\Http\Request;
@@ -25,6 +26,7 @@ class HomeController extends Controller
             "adminProject" => AdminProject::all(),
             "adminListJasa" => AdminListJasa::all(),
             "jasas" => Jasa::all(),
+            'adminlinks' => adminLinks::all(),
         ]);
     }
 

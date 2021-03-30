@@ -118,10 +118,12 @@ object{
     justify-content: center;
     align-self: center;
 }
-.container .row.form-contact .col-sm-6.contactInformation .contact-icon i{
+.container .row.form-contact .col-sm-6.contactInformation .contact-icon a{
+    color: white;
     padding: 10px 5px;
     font-size: 20px;
 }
+
 @media (min-width: 991.98px) {
     .jumbotron-fluid.contact{
         height: 80vh;
@@ -176,6 +178,7 @@ object{
         font-size: 30px;
     }
 
+    
 }
 
 

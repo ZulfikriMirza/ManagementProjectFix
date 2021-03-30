@@ -1,15 +1,14 @@
 <div class="img-section">
-    <img src="{{ asset('storage/LandingPage/' . $adminHome[0]->filename) }}">
-    <img src="{{ asset('storage/LandingPage/' . $adminHome[1]->filename) }}">
-    <img src="{{ asset('storage/LandingPage/' . $adminHome[2]->filename) }}">
+    @foreach($adminHome as $item)
+    <img src="{{ asset('storage/LandingPage/' . $item->filename) }}">
+    @endforeach
 </div>
 <div class="row mainSection no-gutters">
     <div class="col-md-7 col-lg-8 leftSection">
         <div class="icon-section">
-            <a href="https://www.facebook.com/mahesa.a.negara" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/mahesanegara/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/AJMBSF" target="_blank"><i class="fab fa-twitter"></i></a>
+            @foreach($adminlinks as $item)
+            <a href="{{ $item->link }}" target="_blank"><i class="{{ $item->class }}"></i></a>
+            @endforeach
         </div>
     </div>
     <div class="col-md-5 col-lg-4 rightSection">
@@ -28,9 +27,9 @@
             <h2>03</h2>
         </div>
         <div class="text-title">
-            <h3><?= join(" <br> ", array_slice(explode(" ", $adminHome[0]->description), 0, 3)) ?></h3>
-            <h3><?= join(" <br> ", array_slice(explode(" ", $adminHome[1]->description), 0, 3)) ?></h3>
-            <h3><?= join(" <br> ", array_slice(explode(" ", $adminHome[2]->description), 0, 3)) ?></h3>
+            @foreach($adminHome as $item)
+            <h3><?= join(" <br> ", array_slice(explode(" ", $item->description), 0, 3)) ?></h3>
+            @endforeach
         </div>
     </div>
 </div>

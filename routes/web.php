@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FormCheckout;
+use App\Models\adminLinks;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -54,6 +56,7 @@ Route::get('/showcase/{cat?}', function ($cat = 1) {
     return view('Showcase.showcase', [
         'products' => $arr,
         'cat' => $cat,
+        'adminlinks' => adminLinks::all(),
     ]);
 })->name("showcase");
 
@@ -91,4 +94,25 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::post('/showcase/{id}', [AdminShowcaseController::class, 'update'])->name('admin.showcase.post');
     Route::get('/showcase/delete/{id}', [AdminShowcaseController::class, 'destroy'])->name('admin.showcase.destroy');
     Route::get('/showcase/cat/{cat}', [AdminShowcaseController::class, 'select_category'])->name('admin.showcase.cat');
+
+    Route::get('/links', function () {
+        return view("admin.adminEditLink", [
+            'adminLinks' => adminLinks::all(),
+        ]);
+    })->name('admin.links');
+
+    Route::post('/links/{id}', function (Request $request, $id) {
+        $adminItem = adminLinks::all();
+        foreach ($adminItem as $item) {
+            if (isset($_POST['adminButton' . $item->id])) {
+                if ($request['adminLink' . $item->id] == null) {
+                    return back()->with('error', 'You have to fill the input data!');
+                }
+                $admin_update = adminLinks::find($item->id);
+                $admin_update->link = $request['adminLink' . $item->id];
+                $admin_update->save();
+                return back()->with('success', 'You have successfully update the data!');
+            }
+        }
+    })->name('admin.links.post');
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\AdminHome;
+use App\Models\adminLinks;
 use App\Models\AdminListJasa;
 use App\Models\AdminProject;
 use Illuminate\Http\Request;
@@ -20,12 +21,10 @@ class AdminHomeController extends Controller
         $adminHome = AdminHome::all();
         $adminProject = AdminProject::all();
         $adminListJasa = AdminListJasa::all();
-        // dd(array_slice(explode(" ", $adminHome[2]->description), 0, 3));
-        // dd(join(" <br> ", explode(" ", $adminHome[0]->description)));
         return view('admin.adminHome', [
             "adminHome" => $adminHome,
             "adminProject" => $adminProject,
-            "adminListJasa" => $adminListJasa
+            "adminListJasa" => $adminListJasa,
         ]);
     }
 
