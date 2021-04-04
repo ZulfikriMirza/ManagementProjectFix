@@ -173,11 +173,19 @@ class AdminShowcaseController extends Controller
 
                     if ($newFileProduct != null) {
                         $request->validate([
-                            'fileProduct' . $id => 'mimes:jpg,png,jpeg|max:10240'
+                            'fileProduct' . $id => 'mimes:jpg,png,jpeg|max:2048'
                         ]);
+
+			Storage::delete('public/produkListJasa/' . $product->filename);
+
+                        $new_filename =  time() .  '.' . $request['fileProduct' . $product->id]->extension();
+                        $update_home_file = Product::find($product->id);
+                        $update_home_file->image = $new_filename;
+                        $update_home_file->save();
+
                         $request['fileProduct' . $product->id]->storeAs(
                             'public/produkListJasa',
-                            $product->image
+                            $new_filename
                         );
                     }
                     return back()->with('success', "You're successully update the data!");

@@ -8,6 +8,7 @@ use App\Models\adminLinks;
 use App\Models\AdminListJasa;
 use App\Models\AdminProject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminHomeController extends Controller
 {
@@ -93,18 +94,27 @@ class AdminHomeController extends Controller
                         if (count(explode(" ", $newHeadingHome)) > 3) {
                             return back()->with('error', "Words shoudln't be more than 3!");
                         }
+
                         $new_description = ($newHeadingHome) ? $newHeadingHome : $home->description;
                         $update_home = AdminHome::find($home->id);
                         $update_home->description = $new_description;
                         $update_home->save();
                     }
-                    if ($request['fileHome' . $id] != null) {
+                    if ($request['fileHome' . $home->id] != null) {
                         $request->validate([
-                            'fileHome' . $id => 'mimes:jpg,png,jpeg|max:5120'
+                            'fileHome' . $home->id => 'mimes:jpg,png,jpeg|max:2048'
                         ]);
+
+			Storage::delete('public/LandingPage/' . $home->filename);
+
+			$new_filename =  time() .  '.' . $request['fileHome' . $home->id]->extension();
+			$update_home_file = AdminHome::find($home->id);
+			$update_home_file->filename = $new_filename;
+			$update_home_file->save();
+
                         $request['fileHome' . $home->id]->storeAs(
                             'public/LandingPage',
-                            $home->filename
+                            $new_filename
                         );
                     }
                     return back()->with('success', "You're successully update the data!");
@@ -142,11 +152,20 @@ class AdminHomeController extends Controller
                     }
                     if ($request['fileProject' . $project->id] != null) {
                         $request->validate([
-                            'fileProject' . $project->id => 'mimes:jpg,png,jpeg|max:5120'
+                            'fileProject' . $project->id => 'mimes:jpg,png,jpeg|max:2048'
                         ]);
+
+			Storage::delete('public/Projects/' . $project->filename);
+
+			$new_filename =  time() .  '.' . $request['fileProject' . $project->id]->extension();
+                        $update_project_file = AdminProject::find($project->id);
+                        $update_project_file->filename = $new_filename;
+                        $update_project_file->save();
+
+		
                         $request['fileProject' . $project->id]->storeAs(
                             'public/Projects',
-                            $project->filename
+                            $new_filename
                         );
                     }
                     return back()->with('success', "You're successully update the data!");
@@ -171,11 +190,19 @@ class AdminHomeController extends Controller
                     }
                     if ($request['fileListJasa' . $listjasa->id] != null) {
                         $request->validate([
-                            'fileListJasa' . $listjasa->id => 'mimes:jpg,png,jpeg|max:5120'
+                            'fileListJasa' . $listjasa->id => 'mimes:jpg,png,jpeg|max:2048'
                         ]);
+
+			Storage::delete('public/ListJasa/' . $listjasa->filename);
+
+			$new_filename =  time() .  '.' . $request['fileListJasa' . $listjasa->id]->extension();
+                        $update_listjasa_file = AdminListJasa::find($listjasa->id);
+                        $update_listjasa_file->filename = $new_filename;
+                        $update_listjasa_file->save();
+
                         $request['fileListJasa' . $listjasa->id]->storeAs(
                             'public/ListJasa',
-                            $listjasa->filename
+                            $new_filename
                         );
                     }
                     return back()->with('success', "You're successully update the data!");

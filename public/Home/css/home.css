@@ -391,18 +391,18 @@ h1,h2,h3,h4{
     .img-section{
         position: absolute;
         transform: translate(-50%,-50%);
-        top: 52%;
+        top: 56%;
         left: 45%;
-        width: 750px;
-        height: 500px;
+        width: 700px;
+        height: 450px;
         overflow: hidden;
     }
 
     .img-section img{
         position: relative;
         top: 0%;
-        width: 750px;
-        height: 500px;
+        width: 700px;
+        height: 450px;
         z-index: 5;
         transition: 0.3s ease-in-out;
         object-fit: cover;

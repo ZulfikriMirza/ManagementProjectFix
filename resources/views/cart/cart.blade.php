@@ -7,7 +7,7 @@
 
 
 @section('content')
-@include('Navbar.index')
+@include('navbar.index')
 
 <div class="container mt-5">
 

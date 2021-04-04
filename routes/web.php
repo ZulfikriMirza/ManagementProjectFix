@@ -30,8 +30,6 @@ use Illuminate\Support\Facades\DB;
 Route::get('/', [HomeController::class, 'index'])->name("home");
 
 
-
-
 //------------------Controller About Us------------------//
 Route::get('/aboutus', [AboutUsController::class, 'index'])->name("aboutus");
 
